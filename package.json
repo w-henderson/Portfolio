@@ -1,5 +1,5 @@
 {
-  "name": "william-s-portfolio",
+  "name": "portfolio",
   "version": "1.0.0",
   "private": true,
   "description": "William's Portfolio",
@@ -16,9 +16,11 @@
   },
   "dependencies": {
     "gatsby": "^3.11.1",
+    "gatsby-plugin-react-helmet": "^4.11.0",
     "gatsby-plugin-sass": "^4.11.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
     "sass": "^1.37.5"
   }
 }
