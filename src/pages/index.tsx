@@ -27,9 +27,25 @@ class Index extends React.Component {
         </header>
 
         <Console>
-          <ConsoleCommand command="example command">
-            example response
+          <ConsoleCommand command="cat location.txt">
+            Exeter, United Kingdom
           </ConsoleCommand>
+
+          <ConsoleCommand command="cat contact.json">
+            ["<a href="mailto:william-henderson@outlook.com">william-henderson@outlook.com</a>",
+            "<a href="https://github.com/w-henderson">GitHub</a>",
+            "<a href="https://twitter.com/hxswell">Twitter</a>"]
+          </ConsoleCommand>
+
+          <ConsoleCommand command="cat skills.json">
+            ["Rust", "React", "JavaScript", "TypeScript", "Sass", "Python", "Git/GitHub", "Firebase", "Google Cloud Platform"]
+          </ConsoleCommand>
+
+          <ConsoleCommand command="cat education.txt">
+            Ten level 9 GCSEs including Mathematics, English Language and Computer Science
+          </ConsoleCommand>
+
+          <ConsoleCommand cursor={true} />
         </Console>
       </main>
     )

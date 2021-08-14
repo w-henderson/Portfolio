@@ -1,21 +1,25 @@
 import React from "react";
 
 interface ConsoleCommandProps {
-  command: string
+  command?: string,
+  cursor?: boolean
 }
 
 class ConsoleCommand extends React.Component<ConsoleCommandProps> {
   render() {
     return (
-      <div>
+      <div style={{ marginBottom: "1em" }}>
         <span style={{ color: "#e08374" }}>guest@portfolio</span>
         <span style={{ color: "#7f5c52" }}>:</span>
         <span style={{ color: "#e08374" }}>~</span>
         <span style={{ color: "#7f5c52" }}>$</span>
 
-        <span> {this.props.command}</span><br />
+        {this.props.cursor === true &&
+          <div className="cursor"></div>
+        }
 
-        {this.props.children}
+        <span> {this.props.command}</span><br />
+        <div>{this.props.children}</div>
       </div>
     )
   }
