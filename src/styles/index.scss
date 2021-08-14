@@ -62,6 +62,22 @@ main {
             }
         }
     }
+
+    section.projects {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+
+        h1 {
+            position: relative;
+            width: 100%;
+            margin: 0 auto 32px auto;
+            font-size: 4rem;
+            font-family: Prata;
+            text-align: center;
+            color: $accent;
+        }
+    }
 }
 
 @media only screen and (max-width: 600px) {

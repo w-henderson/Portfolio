@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@material-ui/icons": "^4.11.2",
     "gatsby": "^3.11.1",
     "gatsby-plugin-react-helmet": "^4.11.0",
     "gatsby-plugin-sass": "^4.11.0",

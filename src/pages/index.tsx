@@ -4,6 +4,9 @@ import "../styles/index.scss";
 
 import Console from "../components/Console";
 import ConsoleCommand from "../components/ConsoleCommand";
+import Project from "../components/Project";
+
+const PROJECTS: ProjectData[] = require("../projects.json");
 
 interface IndexState {
   width: number,
@@ -24,6 +27,8 @@ class Index extends React.Component<{}, IndexState> {
         height: window.innerHeight
       })
     }).bind(this));
+
+    console.log(PROJECTS);
   }
 
   render() {
@@ -34,8 +39,8 @@ class Index extends React.Component<{}, IndexState> {
         </Helmet>
 
         <nav>
-          <a href="#">Projects</a>
-          <a href="#">Contact</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </nav>
 
         <header>
@@ -77,6 +82,14 @@ class Index extends React.Component<{}, IndexState> {
             cursor={true}
             showFull={this.state.width > 600} />
         </Console>
+
+        <section className="projects">
+          <h1 ref="projects">Projects</h1>
+
+          {PROJECTS.map((project, index) =>
+            <Project project={project} key={index} />
+          )}
+        </section>
       </main>
     )
   }
