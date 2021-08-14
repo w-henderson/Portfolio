@@ -5,7 +5,27 @@ import "../styles/index.scss";
 import Console from "../components/Console";
 import ConsoleCommand from "../components/ConsoleCommand";
 
-class Index extends React.Component {
+interface IndexState {
+  width: number,
+  height: number
+}
+
+class Index extends React.Component<{}, IndexState> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      width: window.innerWidth,
+      height: window.innerHeight
+    }
+
+    window.addEventListener("resize", (() => {
+      this.setState({
+        width: window.innerWidth,
+        height: window.innerHeight
+      })
+    }).bind(this));
+  }
+
   render() {
     return (
       <main>
@@ -27,25 +47,35 @@ class Index extends React.Component {
         </header>
 
         <Console>
-          <ConsoleCommand command="cat location.txt">
+          <ConsoleCommand
+            command="cat location.txt"
+            showFull={this.state.width > 600} >
             Exeter, United Kingdom
           </ConsoleCommand>
 
-          <ConsoleCommand command="cat contact.json">
+          <ConsoleCommand
+            command="cat contact.json"
+            showFull={this.state.width > 600} >
             ["<a href="mailto:william-henderson@outlook.com">william-henderson@outlook.com</a>",
             "<a href="https://github.com/w-henderson">GitHub</a>",
             "<a href="https://twitter.com/hxswell">Twitter</a>"]
           </ConsoleCommand>
 
-          <ConsoleCommand command="cat skills.json">
+          <ConsoleCommand
+            command="cat skills.json"
+            showFull={this.state.width > 600} >
             ["Rust", "React", "JavaScript", "TypeScript", "Sass", "Python", "Git/GitHub", "Firebase", "Google Cloud Platform"]
           </ConsoleCommand>
 
-          <ConsoleCommand command="cat education.txt">
+          <ConsoleCommand
+            command="cat education.txt"
+            showFull={this.state.width > 600} >
             Ten level 9 GCSEs including Mathematics, English Language and Computer Science
           </ConsoleCommand>
 
-          <ConsoleCommand cursor={true} />
+          <ConsoleCommand
+            cursor={true}
+            showFull={this.state.width > 600} />
         </Console>
       </main>
     )
