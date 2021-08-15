@@ -1,0 +1,62 @@
+[
+  {
+    "name": "TidesX: UK Tide Times",
+    "description": "TidesX is an intuitive and easy-to-use app for checking the tide times anywhere in the UK. It features predictions and live information for over 600 coastal locations, taken straight from the UK Hydrographic Office. I built TidesX after unsuccessfully searching for a simple and good-looking tide times app, and it has since been downloaded by over a thousand people from all around the country.",
+    "image": "/static/images/tidesx.webp",
+    "tags": [
+      "TypeScript",
+      "Sass",
+      "Firebase",
+      "HTML",
+      "AWS"
+    ],
+    "links": {
+      "source": "https://github.com/w-henderson/TidesX",
+      "production": "https://play.google.com/store/apps/details?id=com.whenderson.tidesx"
+    }
+  },
+  {
+    "name": "JasonDB",
+    "description": "JasonDB is a NoSQL, document-oriented, JSON-based database management system with an emphasis on compatibility with the modern web. It supports access over TCP and WebSocket, and can handle hundreds of thousands of requests per second, making it faster than Redis on the same hardware. Written for a college project, JasonDB also features a JavaScript/TypeScript SDK for easy database access from JavaScript applications.",
+    "image": "/static/images/jasondb.webp",
+    "tags": [
+      "Rust",
+      "TypeScript",
+      "JavaScript"
+    ],
+    "links": {
+      "source": "https://github.com/w-henderson/JasonDB"
+    }
+  },
+  {
+    "name": "Kascreech",
+    "description": "A joint project with a friend, Kascreech is a real-time multiplayer quiz platform based on Kahoot. It supports hundreds of simultaneous games and real-time client-server communication through WebSocket. The project was originally written without a JavaScript framework, but to improve the quality of both the code and the final product, we elected to completely rewrite the project from scratch using React. I mainly developed the front-end while my friend handled the server, but neither exclusively.",
+    "image": "/static/images/kascreech.webp",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Rust",
+      "Sass",
+      "Google Cloud Platform"
+    ],
+    "links": {
+      "source": "https://github.com/w-henderson/Kascreech",
+      "production": "http://kascreech.ga"
+    }
+  },
+  {
+    "name": "Writeboard",
+    "description": "Writeboard is a simple yet stylish whiteboard app which allows any class or team to share their ideas quickly and easily. It offers a user-friendly and intuitive platform for students to engage with lessons and make progress in today's increasingly-online world. Built during the lockdown of 2021, Writeboard was quickly adopted by my school and peaked at 126 active users in February, having been used in more than 25 countries around the world.",
+    "image": "/static/images/writeboard.webp",
+    "tags": [
+      "TypeScript",
+      "Sass",
+      "Firebase",
+      "HTML"
+    ],
+    "links": {
+      "source": "https://github.com/w-henderson/Writeboard",
+      "production": "https://writeboard.ga"
+    }
+  }
+]
