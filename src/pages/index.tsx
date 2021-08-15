@@ -2,9 +2,16 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import "../styles/index.scss";
 
+import {
+  GitHub as GitHubIcon,
+  Twitter as TwitterIcon,
+  Email as EmailIcon
+} from "@material-ui/icons";
+
 import Console from "../components/Console";
 import ConsoleCommand from "../components/ConsoleCommand";
 import Project from "../components/Project";
+import Contact from "../components/Contact";
 
 const PROJECTS: ProjectData[] = require("../projects.json");
 
@@ -51,10 +58,15 @@ class Index extends React.Component<{}, IndexState> {
 
         <header>
           <div>Hello, I'm</div>
+
           <h1>
             <span>William</span>
             <span>Henderson.</span>
           </h1>
+
+          <div>
+            I'm a Software Developer from the United Kingdom with a passion for building efficient, robust and beautiful applications in a variety of fields.
+          </div>
         </header>
 
         <Console>
@@ -90,11 +102,35 @@ class Index extends React.Component<{}, IndexState> {
         </Console>
 
         <section className="projects">
-          <h1 ref="projects">Projects</h1>
+          <h1>Projects</h1>
+
+          <div>
+            In my decade of software development, I've worked on a diverse array of projects, from user-focused websites and mobile apps to the more theoretical databases and web servers.
+          </div>
 
           {PROJECTS.map((project, index) =>
             <Project project={project} key={index} />
           )}
+        </section>
+
+        <section className="contact">
+          <h1>Contact</h1>
+
+          <div>If you want any more information, or just a chat, please send me a message through one of the following platforms.</div>
+
+          <div>
+            <Contact text="w-henderson" link="https://github.com/w-henderson">
+              <GitHubIcon />
+            </Contact>
+
+            <Contact text="william-henderson@outlook.com" link="mailto:william-henderson@outlook.com">
+              <EmailIcon />
+            </Contact>
+
+            <Contact text="@hxswell" link="https://twitter.com/hxswell">
+              <TwitterIcon />
+            </Contact>
+          </div>
         </section>
       </main>
     )

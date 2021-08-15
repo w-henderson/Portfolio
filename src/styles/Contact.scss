@@ -1,0 +1,52 @@
+@import "colours";
+
+div.contact {
+  display: flex;
+  flex: 1 1 auto;
+
+  background-color: white;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+
+  div {
+    display: inline-block;
+
+    &.icon {
+      display: flex;
+      place-items: center;
+      place-content: center;
+      width: 68px;
+      border-right: 1px solid #ddd;
+      color: $accent;
+
+      svg {
+        font-size: 2em;
+      }
+    }
+
+    &.text {
+      flex: 1;
+      padding: 24px;
+      font-size: 1.2em;
+
+      a {
+        text-decoration: none;
+        color: $text;
+        font-family: Prata;
+        white-space: nowrap;
+        transition: color 100ms;
+
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  div.contact div.text a {
+    white-space: normal;
+    word-break: break-word;
+  }
+}

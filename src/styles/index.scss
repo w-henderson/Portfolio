@@ -40,7 +40,7 @@ main {
     header {
         margin-top: 96px;
 
-        div {
+        div:first-of-type {
             display: block;
             width: 100%;
             text-align: center;
@@ -53,13 +53,40 @@ main {
             font-size: 6rem;
             font-family: Prata;
             text-align: center;
-            margin: 2.5rem 0 4rem 0;
+            margin: 2.5rem 0;
             line-height: 1em;
 
             span {
                 display: block;
                 &:first-child { color: $accent; }
             }
+        }
+
+        div:last-of-type {
+            margin: 0 auto;
+            max-width: 750px;
+            text-align: center;
+            font-family: "Fira Mono";
+            font-size: 1.2em;
+        }
+    }
+
+    section {
+        h1 {
+            position: relative;
+            min-width: 100%;
+            margin: 0 auto 32px auto;
+            font-size: 4rem;
+            font-family: Prata;
+            text-align: center;
+            color: $accent;
+        }
+
+        > div:first-of-type {
+            max-width: 750px;
+            text-align: center;
+            font-family: "Fira Mono";
+            font-size: 1.2em;
         }
     }
 
@@ -68,14 +95,22 @@ main {
         flex-direction: column;
         gap: 64px;
 
-        h1 {
-            position: relative;
-            width: 100%;
-            margin: 0 auto 32px auto;
-            font-size: 4rem;
-            font-family: Prata;
-            text-align: center;
-            color: $accent;
+        > div:first-of-type {
+            margin: -64px auto 0 auto;
+        }
+    }
+
+    section.contact {
+        margin: 128px 0 148px 0;
+
+        > div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+
+        > div:first-of-type {
+            margin: 0 auto 64px auto;
         }
     }
 }

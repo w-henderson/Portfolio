@@ -31,6 +31,7 @@ div.console {
         font-family: "Fira Mono";
         font-size: 1.2rem;
         line-height: 1.6rem;
+        word-break: break-word;
 
         a {
             color: $accent;
@@ -53,4 +54,10 @@ div.console {
     0% { opacity: 0; }
     50% { opacity: 0.4; }
     100% { opacity: 0; }
+}
+
+@media only screen and (max-width: 600px) {
+    div.console {
+        margin: 96px 0;
+    }
 }
