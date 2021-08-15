@@ -17,10 +17,12 @@ class Index extends React.Component<{}, IndexState> {
   constructor(props) {
     super(props);
     this.state = {
-      width: window.innerWidth,
-      height: window.innerHeight
+      width: 1920,
+      height: 1080
     }
+  }
 
+  componentDidMount() {
     window.addEventListener("resize", (() => {
       this.setState({
         width: window.innerWidth,
@@ -28,7 +30,10 @@ class Index extends React.Component<{}, IndexState> {
       })
     }).bind(this));
 
-    console.log(PROJECTS);
+    this.setState({
+      width: window.innerWidth,
+      height: window.innerHeight
+    });
   }
 
   render() {
@@ -36,6 +41,7 @@ class Index extends React.Component<{}, IndexState> {
       <main>
         <Helmet>
           <title>Portfolio | William Henderson</title>
+          <link rel="icon" href="/static/images/icon.png" />
         </Helmet>
 
         <nav>
