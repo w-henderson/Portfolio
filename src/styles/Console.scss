@@ -36,6 +36,11 @@ div.console {
         a {
             color: $accent;
             text-decoration: none;
+            transition: color 100ms;
+
+            &:hover {
+                color: lighten($accent, 10%);
+            }
         }
 
         div.cursor {

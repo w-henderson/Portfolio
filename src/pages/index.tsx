@@ -21,8 +21,13 @@ interface IndexState {
 }
 
 class Index extends React.Component<{}, IndexState> {
+  projectsRef: React.RefObject<HTMLElement>;
+  contactRef: React.RefObject<HTMLElement>;
+
   constructor(props) {
     super(props);
+    this.projectsRef = React.createRef();
+    this.contactRef = React.createRef();
     this.state = {
       width: 1920,
       height: 1080
@@ -41,6 +46,11 @@ class Index extends React.Component<{}, IndexState> {
       width: window.innerWidth,
       height: window.innerHeight
     });
+
+    switch (window.location.hash) {
+      case "#projects": return this.projectsRef.current.scrollIntoView();
+      case "#contact": return this.contactRef.current.scrollIntoView();
+    }
   }
 
   render() {
@@ -52,8 +62,8 @@ class Index extends React.Component<{}, IndexState> {
         </Helmet>
 
         <nav>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="#projects" onClick={() => this.projectsRef.current.scrollIntoView({ behavior: "smooth" })}>Projects</a>
+          <a href="#contact" onClick={() => this.contactRef.current.scrollIntoView({ behavior: "smooth" })}>Contact</a>
         </nav>
 
         <header>
@@ -101,7 +111,7 @@ class Index extends React.Component<{}, IndexState> {
             showFull={this.state.width > 600} />
         </Console>
 
-        <section className="projects">
+        <section className="projects" ref={this.projectsRef}>
           <h1>Projects</h1>
 
           <div>
@@ -113,7 +123,7 @@ class Index extends React.Component<{}, IndexState> {
           )}
         </section>
 
-        <section className="contact">
+        <section className="contact" ref={this.contactRef}>
           <h1>Contact</h1>
 
           <div>If you want any more information, or just a chat, please send me a message through one of the following platforms.</div>
