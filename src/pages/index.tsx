@@ -63,7 +63,7 @@ class Index extends React.Component<{}, IndexState> {
 
         <nav>
           <a href="#projects" onClick={() => this.projectsRef.current.scrollIntoView({ behavior: "smooth" })}>Projects</a>
-          <a href="#contact" onClick={() => this.contactRef.current.scrollIntoView({ behavior: "smooth" })}>Contact</a>
+          <a href="#contact" onClick={() => window.scrollTo({ behavior: "smooth", top: document.body.scrollHeight })}>Contact</a>
         </nav>
 
         <header>
