@@ -59,6 +59,7 @@ class Index extends React.Component<{}, IndexState> {
         <Helmet>
           <title>Portfolio | William Henderson</title>
           <link rel="icon" href="/static/images/icon.png" />
+          <meta name="description" content="Hello, I'm William Henderson. I'm a Software Developer from the United Kingdom with a passion for building efficient, robust and beautiful applications in a variety of fields." />
         </Helmet>
 
         <nav>

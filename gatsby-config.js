@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "William's Portfolio",
+    siteUrl: "https://william.pages.dev",
+    title: "Portfolio | William Henderson",
   },
   plugins: [
     "gatsby-plugin-sass",
