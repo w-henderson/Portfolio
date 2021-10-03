@@ -1,7 +1,7 @@
 [
   {
     "name": "TidesX: UK Tide Times",
-    "description": "TidesX is an intuitive and easy-to-use app for checking the tide times anywhere in the UK. It features predictions and live information for over 600 coastal locations, taken straight from the UK Hydrographic Office. I built TidesX after unsuccessfully searching for a simple and good-looking tide times app, and it has since been downloaded by over a thousand people from all around the country.",
+    "description": "TidesX is an intuitive and easy-to-use app for checking the tide times anywhere in the UK. It features predictions and live information for over 600 coastal locations, taken straight from the UK Hydrographic Office. I built TidesX after unsuccessfully searching for a simple and good-looking tide times app, and it has since been downloaded by over two thousand people from all around the country.",
     "image": "/static/images/tidesx.webp",
     "tags": [
       "TypeScript",
@@ -16,16 +16,15 @@
     }
   },
   {
-    "name": "JasonDB",
-    "description": "JasonDB is a NoSQL, document-oriented, JSON-based database management system with an emphasis on compatibility with the modern web. It supports access over TCP and WebSocket, and can handle hundreds of thousands of requests per second, making it faster than Redis on the same hardware. Written for a college project, JasonDB also features a JavaScript/TypeScript SDK for easy database access from JavaScript applications.",
-    "image": "/static/images/jasondb.webp",
+    "name": "Humphrey",
+    "description": "Humphrey is a very fast, robust and flexible HTTP/1.1 web server, with support for static and dynamic content through its Rust crate and plugin system. It has no dependencies when using only default features, and is easily extensible with a configuration file and dynamically-loaded plugins. Humphrey comes with a fully-featured first-party PHP plugin to allow communication with the PHP interpreter over the FastCGI protocol.",
+    "image": "/static/images/humphrey.webp",
     "tags": [
       "Rust",
-      "TypeScript",
-      "JavaScript"
+      "PHP"
     ],
     "links": {
-      "source": "https://github.com/w-henderson/JasonDB"
+      "source": "https://github.com/w-henderson/Humphrey"
     }
   },
   {
@@ -42,6 +41,35 @@
     "links": {
       "source": "https://github.com/w-henderson/Kascreech",
       "production": "http://kascreech.ga"
+    }
+  },
+  {
+    "name": "NHS Vaccert",
+    "description": "Vaccert is a cryptography-based vaccine certification app, built with React Native. It works in exactly the same way as the EU Digital COVID Certificate and the NHS COVID Pass, but is faster, has a more modern and accessible UI, provides verification capabilities in the same app, and is completely open-source. The one Vaccert app can be used by citizens to prove their vaccination status and verify those of others, as well as by NHS staff to issue and sign vaccination certificates. It also provides a simple and easy-to-use interface for managing staff private keys.",
+    "image": "/static/images/vaccert.webp",
+    "tags": [
+      "React Native",
+      "React",
+      "TypeScript",
+      "Rust",
+      "Firebase",
+      "Cryptography"
+    ],
+    "links": {
+      "source": "https://github.com/w-henderson/Vaccert"
+    }
+  },
+  {
+    "name": "JasonDB",
+    "description": "JasonDB is a NoSQL, document-oriented, JSON-based database management system with an emphasis on compatibility with the modern web. It supports access over TCP and WebSocket, and can handle hundreds of thousands of requests per second, making it faster than Redis on the same hardware. Written for a college project, JasonDB also features a JavaScript/TypeScript SDK for easy database access from JavaScript applications.",
+    "image": "/static/images/jasondb.webp",
+    "tags": [
+      "Rust",
+      "TypeScript",
+      "JavaScript"
+    ],
+    "links": {
+      "source": "https://github.com/w-henderson/JasonDB"
     }
   },
   {
