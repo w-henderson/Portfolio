@@ -17,11 +17,10 @@
   },
   {
     "name": "Humphrey",
-    "description": "Humphrey is a very fast, robust and flexible HTTP/1.1 web server, with support for static and dynamic content through its Rust crate and plugin system. It has no dependencies when using only default features, and is easily extensible with a configuration file and dynamically-loaded plugins. Humphrey comes with a fully-featured first-party PHP plugin to allow communication with the PHP interpreter over the FastCGI protocol.",
+    "description": "Humphrey is a very fast, robust and flexible HTTP/1.1 web server, with support for static and dynamic content through its Rust crate and plugin system. It has no dependencies when using only default features, and is easily extensible with a configuration file and dynamically-loaded plugins. Humphrey comes with a fully-featured first-party PHP plugin to allow communication with the PHP interpreter over the FastCGI protocol, and supports WebSocket through a custom dependency-free implementation.",
     "image": "/static/images/humphrey.webp",
     "tags": [
-      "Rust",
-      "PHP"
+      "Rust"
     ],
     "links": {
       "source": "https://github.com/w-henderson/Humphrey"
