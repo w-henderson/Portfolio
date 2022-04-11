@@ -90,7 +90,7 @@ class Index extends React.Component<{}, IndexState> {
           <ConsoleCommand
             command="cat contact.json"
             showFull={this.state.width > 600} >
-            ["<a href="mailto:william-henderson@outlook.com">william-henderson@outlook.com</a>",
+            ["<a href="mailto:hello@whenderson.dev">hello@whenderson.dev</a>",
             "<a href="https://github.com/w-henderson">GitHub</a>",
             "<a href="https://twitter.com/hxswell">Twitter</a>"]
           </ConsoleCommand>
@@ -134,7 +134,7 @@ class Index extends React.Component<{}, IndexState> {
               <GitHubIcon />
             </Contact>
 
-            <Contact text="william-henderson@outlook.com" link="mailto:william-henderson@outlook.com">
+            <Contact text="hello@whenderson.dev" link="mailto:hello@whenderson.dev">
               <EmailIcon />
             </Contact>
 

@@ -17,7 +17,7 @@
   },
   {
     "name": "Humphrey",
-    "description": "Humphrey is a very fast, robust and flexible HTTP/1.1 web server, with support for static and dynamic content through its Rust crate and plugin system. It has no dependencies when using only default features, and is easily extensible with a configuration file and dynamically-loaded plugins. Humphrey comes with a fully-featured first-party PHP plugin to allow communication with the PHP interpreter over the FastCGI protocol, and supports WebSocket through a custom dependency-free implementation.",
+    "description": "Humphrey is a very fast, robust and flexible HTTP/1.1 web server, with support for static and dynamic content through its Rust crate and plugin system. It has no dependencies when only using default features, and the binary is easily extensible with a flexible configuration file and dynamically-loaded plugins. It also provides a WebSocket API for the easy integration of WebSockets into your application, a JSON manipulation crate, and a simple authentication system for authenticating users and managing sessions.",
     "image": "/static/images/humphrey.webp",
     "tags": [
       "Rust"
@@ -39,33 +39,28 @@
     ],
     "links": {
       "source": "https://github.com/w-henderson/Kascreech",
-      "production": "http://kascreech.ga"
+      "production": "https://kascreech.whenderson.dev"
     }
   },
   {
-    "name": "NHS Vaccert",
-    "description": "Vaccert is a cryptography-based vaccine certification app, built with React Native. It works in exactly the same way as the EU Digital COVID Certificate and the NHS COVID Pass, but is faster, has a more modern and accessible UI, provides verification capabilities in the same app, and is completely open-source. The one Vaccert app can be used by citizens to prove their vaccination status and verify those of others, as well as by NHS staff to issue and sign vaccination certificates. It also provides a simple and easy-to-use interface for managing staff private keys.",
-    "image": "/static/images/vaccert.webp",
+    "name": "Authenticate",
+    "description": "Authenticate is a simple two-factor authentication app, built with React Native and available on the Google Play store. It was originally built to provide a faster, more modern alternative to older two-factor authentication apps. Designed around the core principles of ease-of-use, speed and security, it includes cryptographic implementations from scratch for all the required algorithms, including SHA-1, HMAC-SHA-1, HOTP and TOTP, in pure TypeScript. Furthermore, it is completely open-source and free to use, making it a great choice for two-factor authentication.",
+    "image": "/static/images/authenticate.webp",
     "tags": [
       "React Native",
-      "React",
-      "TypeScript",
-      "Rust",
-      "Firebase",
-      "Cryptography"
+      "TypeScript"
     ],
     "links": {
-      "source": "https://github.com/w-henderson/Vaccert"
+      "source": "https://github.com/w-henderson/Authenticate",
+      "production": "https://authenticate.whenderson.dev"
     }
   },
   {
     "name": "JasonDB",
-    "description": "JasonDB is a NoSQL, document-oriented, JSON-based database management system with an emphasis on compatibility with the modern web. It supports access over TCP and WebSocket, and can handle hundreds of thousands of requests per second, making it faster than Redis on the same hardware. Written for a college project, JasonDB also features a JavaScript/TypeScript SDK for easy database access from JavaScript applications.",
+    "description": "JasonDB is a blazingly-fast, JSON-based, log-structured database for Rust. Supporting both in-memory and disk-based storage at the developer's choice, it is fast, flexible and well-integrated with the Rust programming language. It provides complex and highly-optimised queries, as well as an intuitive and extensible API for creating and managing databases.",
     "image": "/static/images/jasondb.webp",
     "tags": [
-      "Rust",
-      "TypeScript",
-      "JavaScript"
+      "Rust"
     ],
     "links": {
       "source": "https://github.com/w-henderson/JasonDB"
