@@ -60,7 +60,8 @@
     "description": "JasonDB is a blazingly-fast, JSON-based, log-structured database for Rust. Supporting both in-memory and disk-based storage at the developer's choice, it is fast, flexible and well-integrated with the Rust programming language. It provides complex and highly-optimised queries, as well as an intuitive and extensible API for creating and managing databases.",
     "image": "/static/images/jasondb.webp",
     "tags": [
-      "Rust"
+      "Rust",
+      "Database"
     ],
     "links": {
       "source": "https://github.com/w-henderson/JasonDB"
