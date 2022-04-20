@@ -20,10 +20,19 @@ main {
     margin: auto;
 
     nav {
+        position: relative;
         width: 100%;
-        padding:  16px 32px;
+        padding: 16px 32px;
         text-align: right;
         font-size: 1.2rem;
+
+        span {
+            float: left;
+            font-family: "Prata";
+            color: $accent;
+            font-size: 1.5em;
+            cursor: default;
+        }
 
         a {
             color: inherit;
@@ -58,7 +67,10 @@ main {
 
             span {
                 display: block;
-                &:first-child { color: $accent; }
+
+                &:first-child {
+                    color: $accent;
+                }
             }
         }
 
@@ -82,7 +94,7 @@ main {
             color: $accent;
         }
 
-        > div:first-of-type {
+        >div:first-of-type {
             max-width: 750px;
             text-align: center;
             font-family: "Fira Mono";
@@ -95,7 +107,7 @@ main {
         flex-direction: column;
         gap: 64px;
 
-        > div:first-of-type {
+        >div:first-of-type {
             margin: -64px auto 0 auto;
         }
     }
@@ -103,13 +115,13 @@ main {
     section.contact {
         margin: 128px 0 148px 0;
 
-        > div {
+        >div {
             display: flex;
             flex-wrap: wrap;
             gap: 32px;
         }
 
-        > div:first-of-type {
+        >div:first-of-type {
             margin: 0 auto 64px auto;
         }
     }
@@ -118,7 +130,10 @@ main {
 @media only screen and (max-width: 600px) {
     main nav {
         padding: 8px;
-        a { margin-left: 32px; }
+
+        a {
+            margin-left: 32px;
+        }
     }
 
     main header h1 {
