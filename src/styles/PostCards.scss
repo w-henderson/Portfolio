@@ -1,0 +1,46 @@
+@import "colours";
+
+div.PostCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  width: 100%;
+  margin-bottom: 96px;
+
+  a {
+    min-width: min(300px, 100%);
+    flex: 1;
+  }
+
+  div.postcard {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
+    padding: 32px;
+
+    div {
+      h2 {
+        margin: 0 0 16px 0;
+        font-family: "Prata";
+        color: $accent;
+      }
+
+      span {
+        font-family: "Fira Mono";
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    transition: 200ms transform,
+    200ms box-shadow;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 0 32px rgba(0, 0, 0, 0.04);
+    }
+  }
+}

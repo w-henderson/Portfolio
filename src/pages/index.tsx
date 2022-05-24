@@ -48,8 +48,8 @@ class Index extends React.Component<{}, IndexState> {
     });
 
     switch (window.location.hash) {
-      case "#projects": return this.projectsRef.current.scrollIntoView();
-      case "#contact": return this.contactRef.current.scrollIntoView();
+      case "#projects": return this.projectsRef.current!.scrollIntoView();
+      case "#contact": return this.contactRef.current!.scrollIntoView();
     }
   }
 
@@ -64,8 +64,9 @@ class Index extends React.Component<{}, IndexState> {
 
         <nav>
           <span>W</span>
-          <a href="#projects" onClick={() => this.projectsRef.current.scrollIntoView({ behavior: "smooth" })}>Projects</a>
+          <a href="#projects" onClick={() => this.projectsRef.current!.scrollIntoView({ behavior: "smooth" })}>Projects</a>
           <a href="#contact" onClick={() => window.scrollTo({ behavior: "smooth", top: document.body.scrollHeight })}>Contact</a>
+          <a href="/blog/">Blog</a>
         </nav>
 
         <header>

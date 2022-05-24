@@ -1,0 +1,51 @@
+@import "colours";
+
+div.Posts {
+  width: 100%;
+  margin-bottom: 96px;
+
+  div.postcard {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
+    padding: 32px;
+    width: 100%;
+    margin-bottom: 32px;
+
+    div {
+      display: flex;
+      flex-wrap: wrap;
+
+      h2 {
+        margin: 0 16px 16px 0;
+        font-family: "Prata";
+        color: $accent;
+        flex-grow: 1;
+      }
+
+      span {
+        font-family: "Fira Mono";
+        margin: 0 0 16px 0;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    transition: 200ms transform,
+    200ms box-shadow;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 0 32px rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  div.end {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 48px;
+  }
+}

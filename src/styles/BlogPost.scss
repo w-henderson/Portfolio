@@ -1,0 +1,52 @@
+@import "colours";
+
+main.blogPost {
+  >div {
+    max-width: 800px;
+    margin: auto;
+
+    header {
+      h1 {
+        font-size: 4rem;
+      }
+
+      margin-bottom: 64px;
+    }
+
+    div.post {
+      font-size: 20px;
+      line-height: 26px;
+      margin-bottom: 96px;
+
+      p {
+        margin: 1.2em 0;
+      }
+
+      code {
+        display: block;
+        max-width: 800px;
+
+        font-family: "Fira Mono";
+        font-size: 16px;
+        background-color: white;
+        box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
+        padding: 4px;
+        border-radius: 4px;
+        overflow: auto;
+      }
+
+      blockquote {
+        border-left: 8px solid transparentize($accent, 0.5);
+
+        margin: 0;
+        padding-left: 32px;
+        font-family: "Prata";
+      }
+
+      a {
+        text-decoration: underline;
+        color: $accent;
+      }
+    }
+  }
+}
