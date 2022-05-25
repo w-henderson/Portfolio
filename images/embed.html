@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embed Image</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Prata&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      display: flex;
+      place-items: center;
+      place-content: center;
+      color: #e08374;
+      background-color: #fcf8f6;
+      font-family: "Prata";
+    }
+
+    div.icon {
+      position: absolute;
+      top: 48px;
+      left: 48px;
+      font-size: 56px;
+    }
+
+    div.title {
+      color: #e08374;
+      font-size: 36px;
+      text-align: center;
+      max-width: 1000px;
+    }
+
+    div.date {
+      text-align: center;
+      font-size: 32px;
+      font-family: "Fira Mono";
+      color: #7f5c52;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="icon">W</div>
+
+  <main>
+    <div class="title">
+      <h1>
+        <script>
+          window.__params = new URLSearchParams(window.location.search);
+          document.write(window.__params.get("title") ?? "Untitled");
+        </script>
+      </h1>
+    </div>
+
+    <div class="date">
+      <script>
+        document.write(window.__params.get("date") ?? "Unknown Date");
+      </script>
+    </div>
+  </main>
+</body>
+
+</html>

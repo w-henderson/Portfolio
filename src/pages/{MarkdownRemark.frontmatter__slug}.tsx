@@ -12,12 +12,25 @@ export default function Template({
 }) {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
+  const pathToEmbed = `https://whenderson.dev/static/images/blog/${frontmatter.slug.split("/").pop()}.png`;
 
   return (
     <main className="blogPost">
       <Helmet>
         <title>{frontmatter.title} | William Henderson</title>
         <link rel="icon" href="/static/images/icon.png" />
+
+        <meta property="og:title" content={frontmatter.title} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://whenderson.dev${frontmatter.slug}/`} />
+        <meta property="og:site_name" content="William Henderson" />
+        <meta property="og:image" content={pathToEmbed} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <meta property="article:author" content="William Henderson" />
+        <meta property="article:published_time" content={frontmatter.metaDate} />
+        <meta property="article:modified_time" content={frontmatter.metaDate} />
       </Helmet>
 
       <nav>
@@ -34,7 +47,7 @@ export default function Template({
           </h1>
 
           <div>
-            {frontmatter.date}
+            {frontmatter.displayDate}
           </div>
         </header>
 
@@ -52,7 +65,8 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        displayDate: date(formatString: "MMMM DD, YYYY")
+        metaDate: date(formatString: "YYYY-MM-DDTHH:mm:ssZ")
         slug
         title
       }
