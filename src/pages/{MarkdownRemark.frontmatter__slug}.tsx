@@ -2,7 +2,10 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 
-import "../styles/BlogPost.scss"
+import "../styles/BlogPost.scss";
+
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+deckDeckGoHighlightElement();
 
 export default function Template({
   data,

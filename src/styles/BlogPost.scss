@@ -22,7 +22,7 @@ main.blogPost {
         margin: 1.2em 0;
       }
 
-      code {
+      deckgo-highlight-code {
         display: block;
         max-width: 800px;
 
@@ -30,9 +30,23 @@ main.blogPost {
         font-size: 16px;
         background-color: white;
         box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
-        padding: 4px;
+        padding: 2px;
         border-radius: 4px;
         overflow: auto;
+
+        div.container {
+          border-radius: 4px;
+        }
+
+        color: #383A42;
+        --deckgo-highlight-code-token-atrule: #A626A4;
+        --deckgo-highlight-code-token-comment: #A0A1A7;
+        --deckgo-highlight-code-token-function: #C18401;
+        --deckgo-highlight-code-token-operator: #383A42;
+        --deckgo-highlight-code-token-property: #E45649;
+        --deckgo-highlight-code-token-punctuation: #383A42;
+        --deckgo-highlight-code-token-regex: #50A14F;
+        --deckgo-highlight-code-token-selector: #50A14F;
       }
 
       blockquote {
