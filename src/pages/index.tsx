@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { graphql } from "gatsby";
 import "../styles/index.scss";
 
 import {
@@ -12,6 +13,7 @@ import Console from "../components/Console";
 import ConsoleCommand from "../components/ConsoleCommand";
 import Project from "../components/Project";
 import Contact from "../components/Contact";
+import PostCards from "../components/PostCards";
 
 const PROJECTS: ProjectData[] = require("../projects.json");
 
@@ -20,7 +22,25 @@ interface IndexState {
   height: number
 }
 
-class Index extends React.Component<{}, IndexState> {
+type IndexProps = {
+  data: {
+    allMarkdownRemark: {
+      edges: {
+        node: {
+          id: string,
+          excerpt: string,
+          frontmatter: {
+            date: string,
+            slug: string,
+            title: string
+          }
+        }
+      }[]
+    }
+  }
+}
+
+class Index extends React.Component<IndexProps, IndexState> {
   projectsRef: React.RefObject<HTMLElement>;
   contactRef: React.RefObject<HTMLElement>;
 
@@ -48,8 +68,8 @@ class Index extends React.Component<{}, IndexState> {
     });
 
     switch (window.location.hash) {
-      case "#projects": return this.projectsRef.current.scrollIntoView();
-      case "#contact": return this.contactRef.current.scrollIntoView();
+      case "#projects": return this.projectsRef.current!.scrollIntoView();
+      case "#contact": return this.contactRef.current!.scrollIntoView();
     }
   }
 
@@ -64,8 +84,9 @@ class Index extends React.Component<{}, IndexState> {
 
         <nav>
           <span>W</span>
-          <a href="#projects" onClick={() => this.projectsRef.current.scrollIntoView({ behavior: "smooth" })}>Projects</a>
+          <a href="#projects" onClick={() => this.projectsRef.current!.scrollIntoView({ behavior: "smooth" })}>Projects</a>
           <a href="#contact" onClick={() => window.scrollTo({ behavior: "smooth", top: document.body.scrollHeight })}>Contact</a>
+          <a href="/blog/">Blog</a>
         </nav>
 
         <header>
@@ -125,6 +146,23 @@ class Index extends React.Component<{}, IndexState> {
           )}
         </section>
 
+        <section className="blogPosts">
+          <h1>Blog</h1>
+
+          <div>
+            Here are my most recent blog posts. You can find more of my thoughts and ideas on the <a href="/blog/">blog page</a>.
+          </div>
+
+          <PostCards posts={this.props.data.allMarkdownRemark.edges.slice(0, 3).map(post => {
+            return {
+              title: post.node.frontmatter.title,
+              date: post.node.frontmatter.date,
+              slug: post.node.frontmatter.slug,
+              excerpt: post.node.excerpt
+            }
+          })} />
+        </section>
+
         <section className="contact" ref={this.contactRef}>
           <h1>Contact</h1>
 
@@ -150,3 +188,21 @@ class Index extends React.Component<{}, IndexState> {
 }
 
 export default Index;
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 100)
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
+          }
+        }
+      }
+    }
+  }
+`

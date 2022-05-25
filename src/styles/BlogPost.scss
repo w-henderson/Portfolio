@@ -1,0 +1,76 @@
+@import "colours";
+
+main.blogPost {
+  >div {
+    max-width: 800px;
+    margin: auto;
+
+    header {
+      h1 {
+        font-size: 4rem;
+      }
+
+      margin-bottom: 64px;
+    }
+
+    div.post {
+      font-size: 20px;
+      line-height: 26px;
+      margin-bottom: 96px;
+
+      p {
+        margin: 1.2em 0;
+      }
+
+      deckgo-highlight-code {
+        display: block;
+        max-width: 800px;
+
+        font-family: "Fira Mono";
+        font-size: 16px;
+        background-color: white;
+        box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
+        padding: 2px;
+        border-radius: 4px;
+        overflow: auto;
+
+        div.container {
+          border-radius: 4px;
+        }
+
+        color: #383A42;
+        --deckgo-highlight-code-token-atrule: #A626A4;
+        --deckgo-highlight-code-token-comment: #A0A1A7;
+        --deckgo-highlight-code-token-function: #C18401;
+        --deckgo-highlight-code-token-operator: #383A42;
+        --deckgo-highlight-code-token-property: #E45649;
+        --deckgo-highlight-code-token-punctuation: #383A42;
+        --deckgo-highlight-code-token-regex: #50A14F;
+        --deckgo-highlight-code-token-selector: #50A14F;
+      }
+
+      blockquote {
+        border-left: 8px solid transparentize($accent, 0.5);
+
+        margin: 0;
+        padding-left: 32px;
+        font-family: "Prata";
+      }
+
+      a {
+        text-decoration: underline;
+        color: $accent;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Prata";
+        margin: 1.5em 0 24px 0;
+      }
+    }
+  }
+}
