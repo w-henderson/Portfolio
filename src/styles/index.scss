@@ -123,6 +123,19 @@ main {
         }
     }
 
+    section.blogPosts {
+        margin: 128px 0 0 0;
+
+        >div:first-of-type {
+            margin: 0 auto 64px auto;
+
+            a {
+                text-decoration: underline;
+                color: $accent;
+            }
+        }
+    }
+
     section.contact {
         margin: 128px 0 148px 0;
 

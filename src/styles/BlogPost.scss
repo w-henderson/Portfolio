@@ -47,6 +47,16 @@ main.blogPost {
         text-decoration: underline;
         color: $accent;
       }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Prata";
+        margin: 1.5em 0 24px 0;
+      }
     }
   }
 }
