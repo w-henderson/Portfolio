@@ -2,6 +2,7 @@
 slug: "/blog/creating-a-blog-with-gatsby"
 date: "2022-05-25"
 title: "Creating a blog with Gatsby"
+description: "Creating a blog with Gatsby, using Markdown for the content, learning about GraphQL to query the data, and adding syntax highlighting with Prism."
 ---
 
 With the A-level exam season in full swing, I've been finding more and more creative ways to procrastinate. I've long been thinking about creating a blog to share my thoughts about my computer science projects, and what better time to start it than just before my Further Mathematics Core Pure exam?

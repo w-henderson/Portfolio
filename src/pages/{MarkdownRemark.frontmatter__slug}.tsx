@@ -27,6 +27,8 @@ export default function Template({
         <meta property="og:image" content={pathToEmbed} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:description" content={frontmatter.description} />
+        <meta property="description" content={frontmatter.description} />
 
         <meta property="article:author" content="William Henderson" />
         <meta property="article:published_time" content={frontmatter.metaDate} />
@@ -69,6 +71,7 @@ export const pageQuery = graphql`
         metaDate: date(formatString: "YYYY-MM-DDTHH:mm:ssZ")
         slug
         title
+        description
       }
     }
   }
