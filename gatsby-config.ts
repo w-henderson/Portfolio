@@ -7,6 +7,7 @@ const config: GatsbyConfig = {
   },
   plugins: [
     "gatsby-plugin-sass",
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-transformer-remark",
       options: {

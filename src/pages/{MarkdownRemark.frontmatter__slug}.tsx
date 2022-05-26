@@ -33,6 +33,13 @@ export default function Template({
         <meta property="article:author" content="William Henderson" />
         <meta property="article:published_time" content={frontmatter.metaDate} />
         <meta property="article:modified_time" content={frontmatter.metaDate} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@w-henderson" />
+        <meta name="twitter:title" content={frontmatter.title} />
+        <meta name="twitter:description" content={frontmatter.description} />
+        <meta name="twitter:image" content={pathToEmbed} />
+        <meta name="twitter:url" content={`https://whenderson.dev${frontmatter.slug}/`} />
       </Helmet>
 
       <nav>
