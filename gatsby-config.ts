@@ -26,6 +26,14 @@ const config: GatsbyConfig = {
         "name": "markdown-pages",
         "path": "./blog/"
       },
+    },
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: [
+          "G-PMZWXY0XC4"
+        ]
+      }
     }
   ]
 };
