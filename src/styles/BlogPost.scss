@@ -50,10 +50,6 @@ main.blogPost {
         --deckgo-highlight-code-token-selector: #50A14F;
 
         --deckgo-highlight-code-white-space: pre;
-
-        code::-webkit-scrollbar:horizontal {
-          background: black;
-        }
       }
 
       blockquote {
@@ -77,6 +73,13 @@ main.blogPost {
       h6 {
         font-family: "Prata";
         margin: 1.5em 0 24px 0;
+      }
+
+      img {
+        max-width: 100%;
+        box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin: 1em 0;
       }
     }
   }
