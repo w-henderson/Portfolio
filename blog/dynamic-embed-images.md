@@ -9,7 +9,7 @@ One of the most important things about a blog is encouraging people to read it. 
 
 In this post, we'll be discussing my favourite technique for dynamically generating these images in the context of a Gatsby blog, but much of this is also applicable to other static site generators. The final result looks like this:
 
-![Final result](/static/images/blog/dynamic-embed-images.png)
+![Final result](/images/blog/dynamic-embed-images.png)
 
 ## The Obvious Approach
 
@@ -63,8 +63,8 @@ exports.onPostBuild = async ({ graphql }) => {
     });
 
     // Create the output directory if it doesn't exist.
-    if (!fs.existsSync("./public/static/images/blog")) {
-      fs.mkdirSync("./public/static/images/blog");
+    if (!fs.existsSync("./public/images/blog")) {
+      fs.mkdirSync("./public/images/blog");
     }
 
     // Loop through the posts, generate each image and save them.
@@ -74,7 +74,7 @@ exports.onPostBuild = async ({ graphql }) => {
       let slug = post.frontmatter.slug.split("/").pop();
 
       await page.goto(`file:///${__dirname}/images/embed.html?title=${title}&date=${date}`);
-      await page.screenshot({ path: `./public/static/images/blog/${slug}.png` });
+      await page.screenshot({ path: `./public/images/blog/${slug}.png` });
     }
   })
 }
@@ -117,7 +117,7 @@ Now we have the embed images automatically generated and placed in a folder each
 I created a variable `pathToEmbed` to store the path to the embed image that we just generated:
 
 ```ts
-const pathToEmbed = `https://whenderson.dev/static/images/blog/${frontmatter.slug.split("/").pop()}.png`;
+const pathToEmbed = `https://whenderson.dev/images/blog/${frontmatter.slug.split("/").pop()}.png`;
 ```
 
 Then, in the `Helmet` component, we add the following tags:

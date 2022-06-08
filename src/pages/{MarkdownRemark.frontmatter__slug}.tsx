@@ -12,13 +12,13 @@ export default function Template({
 }) {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
-  const pathToEmbed = `https://whenderson.dev/static/images/blog/${frontmatter.slug.split("/").pop()}.png`;
+  const pathToEmbed = `https://whenderson.dev/images/blog/${frontmatter.slug.split("/").pop()}.png`;
 
   return (
     <main className="blogPost">
       <Helmet>
         <title>{frontmatter.title} | William Henderson</title>
-        <link rel="icon" href="/static/images/icon.png" />
+        <link rel="icon" href="/images/icon.png" />
 
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:type" content="article" />

@@ -29,7 +29,7 @@ class Blog extends React.Component<BlogProps> {
       <main>
         <Helmet>
           <title>Blog | William Henderson</title>
-          <link rel="icon" href="/static/images/icon.png" />
+          <link rel="icon" href="/images/icon.png" />
         </Helmet>
 
         <nav>

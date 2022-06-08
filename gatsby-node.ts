@@ -27,8 +27,8 @@ exports.onPostBuild = async ({ graphql }) => {
       height: 630
     });
 
-    if (!fs.existsSync("./public/static/images/blog")) {
-      fs.mkdirSync("./public/static/images/blog");
+    if (!fs.existsSync("./public/images/blog")) {
+      fs.mkdirSync("./public/images/blog");
     }
 
     for (let post of posts) {
@@ -37,7 +37,7 @@ exports.onPostBuild = async ({ graphql }) => {
       let slug = post.frontmatter.slug.split("/").pop();
 
       await page.goto(`file:///${__dirname}/images/embed.html?title=${title}&date=${date}`);
-      await page.screenshot({ path: `./public/static/images/blog/${slug}.png` });
+      await page.screenshot({ path: `./public/images/blog/${slug}.png` });
     }
   })
 }

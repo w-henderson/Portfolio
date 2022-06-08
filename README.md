@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/static/images/icon.png" width=200>
+  <img src="static/images/icon.png" width=200>
 </p>
 
 <h1 align="center">Portfolio and Blog</h1>

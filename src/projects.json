@@ -2,7 +2,7 @@
   {
     "name": "TidesX: UK Tide Times",
     "description": "TidesX is an intuitive and easy-to-use app for checking the tide times anywhere in the UK. It features predictions and live information for over 600 coastal locations, taken straight from the UK Hydrographic Office. I built TidesX after unsuccessfully searching for a simple and good-looking tide times app, and it has since been downloaded by over two thousand people from all around the country.",
-    "image": "/static/images/tidesx.webp",
+    "image": "/images/tidesx.webp",
     "tags": [
       "TypeScript",
       "Sass",
@@ -18,7 +18,7 @@
   {
     "name": "Humphrey",
     "description": "Humphrey is a very fast, robust and flexible HTTP/1.1 web server, with support for static and dynamic content through its Rust crate and plugin system. It has no dependencies when only using default features, and the binary is easily extensible with a flexible configuration file and dynamically-loaded plugins. It also provides a WebSocket API for the easy integration of WebSockets into your application, a JSON manipulation crate, and a simple authentication system for authenticating users and managing sessions.",
-    "image": "/static/images/humphrey.webp",
+    "image": "/images/humphrey.webp",
     "tags": [
       "Rust"
     ],
@@ -29,7 +29,7 @@
   {
     "name": "Kascreech",
     "description": "A joint project with a friend, Kascreech is a real-time multiplayer quiz platform based on Kahoot. It supports hundreds of simultaneous games and real-time client-server communication through WebSocket. The project was originally written without a JavaScript framework, but to improve the quality of both the code and the final product, we elected to completely rewrite the project from scratch using React. I mainly developed the front-end while my friend handled the server, but neither exclusively.",
-    "image": "/static/images/kascreech.webp",
+    "image": "/images/kascreech.webp",
     "tags": [
       "React",
       "TypeScript",
@@ -45,7 +45,7 @@
   {
     "name": "Authenticate",
     "description": "Authenticate is a simple two-factor authentication app, built with React Native and available on the Google Play store. It was originally built to provide a faster, more modern alternative to older two-factor authentication apps. Designed around the core principles of ease-of-use, speed and security, it includes cryptographic implementations from scratch for all the required algorithms, including SHA-1, HMAC-SHA-1, HOTP and TOTP, in pure TypeScript. Furthermore, it is completely open-source and free to use, making it a great choice for two-factor authentication.",
-    "image": "/static/images/authenticate.webp",
+    "image": "/images/authenticate.webp",
     "tags": [
       "React Native",
       "TypeScript"
@@ -58,7 +58,7 @@
   {
     "name": "JasonDB",
     "description": "JasonDB is a blazingly-fast, JSON-based, log-structured database for Rust. Supporting both in-memory and disk-based storage at the developer's choice, it is fast, flexible and well-integrated with the Rust programming language. It provides complex and highly-optimised queries, as well as an intuitive and extensible API for creating and managing databases.",
-    "image": "/static/images/jasondb.webp",
+    "image": "/images/jasondb.webp",
     "tags": [
       "Rust",
       "Database"
@@ -70,7 +70,7 @@
   {
     "name": "Writeboard",
     "description": "Writeboard is a simple yet stylish whiteboard app which allows any class or team to share their ideas quickly and easily. It offers a user-friendly and intuitive platform for students to engage with lessons and make progress in today's increasingly-online world. Built during the lockdown of 2021, Writeboard was quickly adopted by my school and peaked at 126 active users in February, having been used in more than 25 countries around the world.",
-    "image": "/static/images/writeboard.webp",
+    "image": "/images/writeboard.webp",
     "tags": [
       "TypeScript",
       "Sass",
