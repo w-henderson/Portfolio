@@ -77,10 +77,11 @@ main.blogPost {
       }
 
       img {
+        display: block;
         max-width: 100%;
         box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
-        margin: 1em 0;
+        margin: 1.5em auto;
       }
     }
   }
