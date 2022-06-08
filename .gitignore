@@ -1,5 +1,3 @@
 node_modules/
 .cache/
-public/*
-!public/static
-public/static/images/blog/*
+public/
