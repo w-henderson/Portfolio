@@ -16,7 +16,7 @@ export default function Template({
 
   return (
     <main className="blogPost">
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: "en" }}>
         <title>{frontmatter.title} | William Henderson</title>
         <link rel="icon" href="/images/icon.png" />
 

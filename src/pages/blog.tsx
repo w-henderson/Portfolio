@@ -27,7 +27,7 @@ class Blog extends React.Component<BlogProps> {
   render() {
     return (
       <main>
-        <Helmet>
+        <Helmet htmlAttributes={{ lang: "en" }}>
           <title>Blog | William Henderson</title>
           <link rel="icon" href="/images/icon.png" />
         </Helmet>
