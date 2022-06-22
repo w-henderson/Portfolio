@@ -16,7 +16,8 @@ type BlogProps = {
             date: string,
             slug: string,
             title: string
-          }
+          },
+          timeToRead: number,
         }
       }[]
     }
@@ -57,7 +58,8 @@ class Blog extends React.Component<BlogProps> {
               title: post.node.frontmatter.title,
               date: post.node.frontmatter.date,
               slug: post.node.frontmatter.slug,
-              excerpt: post.node.excerpt
+              excerpt: post.node.excerpt,
+              timeToRead: post.node.timeToRead,
             }
           })} />
         </section>
@@ -70,7 +72,8 @@ class Blog extends React.Component<BlogProps> {
               title: post.node.frontmatter.title,
               date: post.node.frontmatter.date,
               slug: post.node.frontmatter.slug,
-              excerpt: post.node.excerpt
+              excerpt: post.node.excerpt,
+              timeToRead: post.node.timeToRead,
             }
           })} />
         </section>
@@ -88,6 +91,7 @@ export const pageQuery = graphql`
         node {
           id
           excerpt(pruneLength: 100)
+          timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             slug

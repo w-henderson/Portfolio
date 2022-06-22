@@ -7,6 +7,7 @@ interface PostCardsProps {
     date: string,
     slug: string,
     excerpt: string,
+    timeToRead: number,
   }[]
 }
 
@@ -15,11 +16,13 @@ class PostCards extends React.Component<PostCardsProps> {
     return (
       <div className="PostCards">
         {this.props.posts.map(post =>
-          <a href={post.slug}>
+          <a href={post.slug} key={post.slug}>
             <div className="postcard">
               <div>
                 <h2>{post.title}</h2>
+
                 <span>{post.date}</span>
+                <span>{post.timeToRead} min</span>
               </div>
 
               <p>{post.excerpt}</p>

@@ -13,19 +13,24 @@ div.Posts {
     margin-bottom: 32px;
 
     div {
-      display: flex;
-      flex-wrap: wrap;
+      margin-bottom: 16px;
 
       h2 {
-        margin: 0 16px 16px 0;
+        margin: 0 0 16px 0;
         font-family: "Prata";
         color: $accent;
-        flex-grow: 1;
       }
 
-      span {
+      span:not(.bull) {
         font-family: "Fira Mono";
-        margin: 0 0 16px 0;
+
+        &:not(:first-of-type) {
+          margin-left: 16px;
+        }
+
+        &:not(:last-of-type) {
+          margin-right: 16px;
+        }
       }
     }
 
@@ -47,5 +52,27 @@ div.Posts {
     text-align: center;
     font-size: 1.2em;
     margin-top: 48px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  div.Posts {
+    div.postcard {
+      div {
+        span {
+          display: block;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+
+          &.bull {
+            display: none;
+          }
+
+          &:last-of-type {
+            margin-top: 4px;
+          }
+        }
+      }
+    }
   }
 }

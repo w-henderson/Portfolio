@@ -56,7 +56,7 @@ export default function Template({
           </h1>
 
           <div>
-            {frontmatter.displayDate}
+            {frontmatter.displayDate} &bull; {markdownRemark.timeToRead} minute read
           </div>
         </header>
 
@@ -73,6 +73,7 @@ export const pageQuery = graphql`
   query($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
+      timeToRead
       frontmatter {
         displayDate: date(formatString: "MMMM DD, YYYY")
         metaDate: date(formatString: "YYYY-MM-DDTHH:mm:ssZ")

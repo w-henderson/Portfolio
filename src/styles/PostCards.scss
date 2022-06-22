@@ -28,6 +28,10 @@ div.PostCards {
 
       span {
         font-family: "Fira Mono";
+
+        &:last-child {
+          float: right;
+        }
       }
     }
 

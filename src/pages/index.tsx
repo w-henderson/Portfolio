@@ -33,7 +33,8 @@ type IndexProps = {
             date: string,
             slug: string,
             title: string
-          }
+          },
+          timeToRead: number
         }
       }[]
     }
@@ -158,7 +159,8 @@ class Index extends React.Component<IndexProps, IndexState> {
               title: post.node.frontmatter.title,
               date: post.node.frontmatter.date,
               slug: post.node.frontmatter.slug,
-              excerpt: post.node.excerpt
+              excerpt: post.node.excerpt,
+              timeToRead: post.node.timeToRead
             }
           })} />
         </section>
@@ -191,11 +193,12 @@ export default Index;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 3) {
       edges {
         node {
           id
           excerpt(pruneLength: 100)
+          timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             slug
