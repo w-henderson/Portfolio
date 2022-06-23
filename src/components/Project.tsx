@@ -1,14 +1,15 @@
 import React from "react";
-import { GitHub, ExitToAppRounded } from "@material-ui/icons";
+import { GitHub, ExitToAppRounded, LibraryBooks } from "@material-ui/icons";
 import "../styles/Project.scss";
 
 interface ProjectProps {
-	project: ProjectData
+	project: ProjectData,
+	width: number
 }
 
 class Project extends React.Component<ProjectProps> {
 	render() {
-		let background = `url("${this.props.project.image}")`;
+		let background = `url("/images/project/${this.props.width > 900 ? "vertical" : "horizontal"}/${this.props.project.image}")`;
 
 		return (
 			<div className="project">
@@ -36,10 +37,19 @@ class Project extends React.Component<ProjectProps> {
 							</a>
 						}
 
-						<a className="secondary" href={this.props.project.links.source}>
-							<GitHub />
-							View Source
-						</a>
+						{this.props.project.links.source !== undefined &&
+							<a className="secondary" href={this.props.project.links.source}>
+								<GitHub />
+								View Source
+							</a>
+						}
+
+						{this.props.project.links.blog !== undefined &&
+							<a className="secondary" href={this.props.project.links.blog}>
+								<LibraryBooks />
+								Blog Post
+							</a>
+						}
 					</div>
 				</div>
 			</div>

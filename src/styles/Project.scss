@@ -19,7 +19,7 @@ div.project {
     flex: 1;
     padding: 64px 64px 52px 64px;
 
-    > div:first-child {
+    >div:first-child {
       margin-bottom: 24px;
       font-size: 1.1em;
 
@@ -52,13 +52,16 @@ div.project {
         text-decoration: none;
         font-weight: 800;
         margin-bottom: 12px;
-        
+        margin-right: 12px;
+
         padding: 10px;
         border-radius: 6px;
         box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.05), 0 0 8px rgba(0, 0, 0, 0.05);
         transition: transform 200ms, color 200ms, background-color 200ms, box-shadow 200ms;
-        
-        svg { font-size: 1.25em; }
+
+        svg {
+          font-size: 1.25em;
+        }
 
         &:hover {
           transform: translateY(-2px);
@@ -69,9 +72,11 @@ div.project {
       a.primary {
         color: white;
         background-color: $accent;
-        margin-right: 12px;
+        border: 1px solid transparent;
 
-        svg { margin-left: 8px; }
+        svg {
+          margin-left: 8px;
+        }
 
         &:hover {
           background-color: darken($accent-light, 10%);
@@ -81,6 +86,7 @@ div.project {
       a.secondary {
         color: $accent;
         background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
 
         svg {
           margin: 0 10px 0 2px;
@@ -96,14 +102,33 @@ div.project {
   }
 }
 
+
 @media only screen and (max-width: 1000px) {
   div.project div.image {
-    display: none;
+    width: 40%;
   }
 }
 
-@media only screen and (max-width: 600px) {
-  div.project div.content {
-    padding: 32px 32px 20px 32px;
+/*
+@media only screen and (max-width: 900px) {
+  div.project div.image {
+    display: none;
+  }
+}*/
+
+@media only screen and (max-width: 900px) {
+  div.project {
+    flex-direction: column;
+
+    div.image {
+      width: 100%;
+      height: calc(55.56vw - 35.56px);
+      display: block;
+      border-radius: 8px 8px 0 0;
+    }
+
+    div.content {
+      padding: 32px 32px 20px 32px;
+    }
   }
 }

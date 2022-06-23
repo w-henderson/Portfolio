@@ -132,7 +132,7 @@ class Index extends React.Component<IndexProps, IndexState> {
                 </span>
 
                 <span className={this.state.additionalSkills ? "additionalSkills show" : "additionalSkills"}>
-                  JavaScript, HTML/CSS/Sass, Python, Git/GitHub, Docker
+                  JavaScript, HTML/CSS/Sass, Python, Git/GitHub, SQL, Docker
                 </span>
               </p>
 
@@ -157,11 +157,14 @@ class Index extends React.Component<IndexProps, IndexState> {
           <h1>Projects</h1>
 
           <div>
-            In my decade of software development, I've worked on a diverse array of projects, from user-focused websites and mobile apps to the more theoretical databases and web servers.
+            Over the course of more than a decade, I've worked on a diverse array of projects, from websites and mobile apps to databases and web servers.
           </div>
 
           {PROJECTS.map((project, index) =>
-            <Project project={project} key={index} />
+            <Project
+              project={project}
+              width={this.state.width}
+              key={index} />
           )}
         </section>
 

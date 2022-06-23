@@ -4,7 +4,8 @@ interface ProjectData {
   image?: string,
   tags: string[],
   links: {
-    source: string,
-    production?: string
+    source?: string,
+    production?: string,
+    blog?: string,
   }
 }
