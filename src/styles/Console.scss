@@ -6,7 +6,7 @@ div.console {
     border-radius: 16px;
     box-shadow: 0 0 64px rgba(0, 0, 0, 0.05);
 
-    > div:first-child {
+    >div:first-child {
         width: 100%;
         height: 32px;
         padding: 8px;
@@ -23,7 +23,7 @@ div.console {
         }
     }
 
-    > div:last-child {
+    >div:last-child {
         width: 100%;
         padding: 32px 32px calc(32px - 1em) 32px;
         background-color: white;
@@ -55,14 +55,76 @@ div.console {
     }
 }
 
+div.mainCommand {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 64px;
+
+    img {
+        flex: 1;
+        width: 40%;
+        height: 400px;
+    }
+
+    >div {
+        flex: 1;
+        padding-top: 1em;
+        min-width: min(400px, 100%);
+
+        span {
+            color: $accent;
+
+            &.expandButton {
+                cursor: pointer;
+                margin-left: 4px;
+                font-weight: bold;
+                user-select: none;
+            }
+
+            &.additionalSkills {
+                color: unset;
+                display: none;
+
+                &.show {
+                    display: block;
+                }
+            }
+        }
+
+        a {
+            color: unset !important;
+            text-decoration: underline !important;
+
+            &:hover {
+                color: $accent  !important;
+            }
+        }
+    }
+}
+
 @keyframes blink {
-    0% { opacity: 0; }
-    50% { opacity: 0.4; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @media only screen and (max-width: 600px) {
     div.console {
         margin: 96px 0;
+    }
+
+    div.mainCommand {
+        img {
+            height: unset;
+            margin-bottom: -48px;
+        }
     }
 }

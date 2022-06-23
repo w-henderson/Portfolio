@@ -3,6 +3,7 @@ import React from "react";
 interface ConsoleCommandProps {
   command?: string,
   cursor?: boolean,
+  className?: string,
   showFull: boolean,
 }
 
@@ -21,7 +22,7 @@ class ConsoleCommand extends React.Component<ConsoleCommandProps> {
           }
 
           <span> {this.props.command}</span><br />
-          <div>{this.props.children}</div>
+          <div className={this.props.className}>{this.props.children}</div>
         </div>
       )
     } else {
@@ -34,7 +35,7 @@ class ConsoleCommand extends React.Component<ConsoleCommandProps> {
           }
 
           <span> {this.props.command}</span><br />
-          <div>{this.props.children}</div>
+          <div className={this.props.className}>{this.props.children}</div>
         </div>
       )
     }

@@ -19,7 +19,8 @@ const PROJECTS: ProjectData[] = require("../projects.json");
 
 interface IndexState {
   width: number,
-  height: number
+  height: number,
+  additionalSkills: boolean
 }
 
 type IndexProps = {
@@ -51,7 +52,8 @@ class Index extends React.Component<IndexProps, IndexState> {
     this.contactRef = React.createRef();
     this.state = {
       width: 1920,
-      height: 1080
+      height: 1080,
+      additionalSkills: false
     }
   }
 
@@ -105,29 +107,45 @@ class Index extends React.Component<IndexProps, IndexState> {
 
         <Console>
           <ConsoleCommand
-            command="cat location.txt"
-            showFull={this.state.width > 600} >
-            Exeter, United Kingdom
-          </ConsoleCommand>
+            className="mainCommand"
+            command="./aboutme"
+            showFull={this.state.width > 600}>
 
-          <ConsoleCommand
-            command="cat contact.json"
-            showFull={this.state.width > 600} >
-            ["<a href="mailto:hello@whenderson.dev">hello@whenderson.dev</a>",
-            "<a href="https://github.com/w-henderson">GitHub</a>",
-            "<a href="https://twitter.com/hxswell">Twitter</a>"]
-          </ConsoleCommand>
+            <img src="/images/icon.svg" alt="ASCII art" />
 
-          <ConsoleCommand
-            command="cat skills.json"
-            showFull={this.state.width > 600} >
-            ["Rust", "React", "JavaScript", "TypeScript", "Sass", "Python", "Git/GitHub", "Firebase", "Google Cloud Platform"]
-          </ConsoleCommand>
+            <div>
+              <p>
+                <span><b>WILLIAM HENDERSON</b></span>
+              </p>
 
-          <ConsoleCommand
-            command="cat education.txt"
-            showFull={this.state.width > 600} >
-            Ten level 9 GCSEs including Mathematics, English Language and Computer Science
+              <p>
+                <span>Location</span>: Exeter, United Kingdom
+              </p>
+
+              <p>
+                <span>Skills</span>: Rust, React, TypeScript,
+                <span
+                  className="expandButton"
+                  onClick={() => this.setState(state => { return { ...state, additionalSkills: !state.additionalSkills } })}>
+
+                  {this.state.additionalSkills ? "-" : "+"}
+                </span>
+
+                <span className={this.state.additionalSkills ? "additionalSkills show" : "additionalSkills"}>
+                  JavaScript, HTML/CSS/Sass, Python, Git/GitHub, Docker
+                </span>
+              </p>
+
+              <p>
+                <span>Education</span>: Ten level 9 GCSEs including Mathematics, Computer Science and English Language
+              </p>
+
+              <p>
+                <span>GitHub</span>: <a href="https://github.com/w-henderson">w-henderson</a><br />
+                <span>Email</span>: <a href="mailto:hello@whenderson.dev">hello@whenderson.dev</a><br />
+                <span>Twitter</span>: <a href="https://twitter.com/hxswell">@hxswell</a><br />
+              </p>
+            </div>
           </ConsoleCommand>
 
           <ConsoleCommand
@@ -184,7 +202,7 @@ class Index extends React.Component<IndexProps, IndexState> {
             </Contact>
           </div>
         </section>
-      </main>
+      </main >
     )
   }
 }
