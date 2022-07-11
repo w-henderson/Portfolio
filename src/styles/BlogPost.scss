@@ -9,6 +9,7 @@ main.blogPost {
       h1 {
         font-size: 4rem;
         hyphens: auto;
+        overflow-wrap: break-word;
       }
 
       margin-bottom: 64px;
@@ -75,6 +76,7 @@ main.blogPost {
         font-family: "Prata";
         margin: 2em 0 20px 0;
         line-height: 1.2em;
+        overflow-wrap: break-word;
       }
 
       img {
