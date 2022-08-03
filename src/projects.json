@@ -1,5 +1,24 @@
 [
   {
+    "name": "Equion",
+    "description": "Equion is a mathematics-focussed chat platform. It has built-in support for LaTeX and Markdown, high-quality low-latency voice chat and screen sharing, and is lightweight and lightning-fast thanks to Rust and Tauri. I built Equion so my friends and I could share mathematics problems with each other while revising for exams.",
+    "image": "equion.webp",
+    "tags": [
+      "Rust",
+      "TypeScript",
+      "React",
+      "Sass",
+      "WebRTC",
+      "MySQL",
+      "Docker",
+      "GCP"
+    ],
+    "links": {
+      "source": "https://github.com/w-henderson/Equion",
+      "production": "https://equion.whenderson.dev"
+    }
+  },
+  {
     "name": "TidesX: UK Tide Times",
     "description": "TidesX is an intuitive and easy-to-use app for checking the tide times anywhere in the UK. It features predictions and live information for over 600 coastal locations, taken straight from the UK Hydrographic Office. I built TidesX after unsuccessfully searching for a simple and good-looking tide times app, and it has since served over 150,000 tidal predictions for locations all around the country.",
     "image": "tidesx.webp",
@@ -35,7 +54,7 @@
       "TypeScript",
       "Rust",
       "Sass",
-      "Google Cloud Platform",
+      "Heroku",
       "Docker"
     ],
     "links": {
