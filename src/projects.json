@@ -15,7 +15,8 @@
     ],
     "links": {
       "source": "https://github.com/w-henderson/Equion",
-      "production": "https://equion.whenderson.dev"
+      "production": "https://equion.whenderson.dev",
+      "blog": "/blog/how-i-built-equion"
     }
   },
   {
