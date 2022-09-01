@@ -1,9 +1,12 @@
-const fs = require("fs");
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
-const { exit } = require("process");
+import fs from "fs";
+import puppeteer from "puppeteer";
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { exit } from "process";
 
-const metadata = JSON.parse(fs.readFileSync("./metadata.json"));
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+const metadata = JSON.parse(fs.readFileSync(`${__dirname}/../../metadata.json`));
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -13,38 +16,33 @@ function dateformat(string) {
   return `${MONTHS[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
 
-(async () => {
-  const { stdout } = await exec("npm root --location=global");
-  const puppeteer = require(`${stdout.trim()}/puppeteer`);
+let posts = metadata
+  .data
+  .find(x => x.type === "directory" && x.name === "blog")
+  .children
+  .filter(x => x.type === "markdown")
+  .map(x => x.value);
 
-  let posts = metadata
-    .data
-    .find(x => x.type === "directory" && x.name === "blog")
-    .children
-    .filter(x => x.type === "markdown")
-    .map(x => x.value);
+let browser = await puppeteer.launch();
+let page = await browser.newPage();
+page.setViewport({
+  width: 1200,
+  height: 630
+});
 
-  let browser = await puppeteer.launch();
-  let page = await browser.newPage();
-  page.setViewport({
-    width: 1200,
-    height: 630
-  });
+if (!fs.existsSync(`${__dirname}/../../dist/images/blog`)) {
+  fs.mkdirSync(`${__dirname}/../../dist/images/blog`);
+}
 
-  if (!fs.existsSync("./dist/images/blog")) {
-    fs.mkdirSync("./dist/images/blog");
-  }
+for (let post of posts) {
+  let title = encodeURIComponent(post.title);
+  let date = encodeURIComponent(dateformat(post.date));
+  let slug = post.slug.split("/").pop();
 
-  for (let post of posts) {
-    let title = encodeURIComponent(post.title);
-    let date = encodeURIComponent(dateformat(post.date));
-    let slug = post.slug.split("/").pop();
+  await page.goto(`file:///${__dirname}/template.html?title=${title}&date=${date}`);
+  await page.screenshot({ path: `${__dirname}/../../dist/images/blog/${slug}.png` });
+}
 
-    await page.goto(`file:///${__dirname}/template.html?title=${title}&date=${date}`);
-    await page.screenshot({ path: `./dist/images/blog/${slug}.png` });
-  }
+await browser.close();
 
-  await browser.close();
-
-  exit(0);
-})();
+exit(0);

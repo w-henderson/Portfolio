@@ -1,2 +1,2 @@
-npm i -g puppeteer
-node scripts/embed/build.js
+cd scripts/embed
+npm i && npm start
