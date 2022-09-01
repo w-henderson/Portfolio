@@ -1,0 +1,8 @@
+[site]
+name = "Portfolio"
+author = "William Henderson <william-henderson@outlook.com>"
+
+[settings]
+strip_extensions = true
+save_data_files = false
+save_metadata = true

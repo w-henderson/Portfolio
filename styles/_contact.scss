@@ -1,5 +1,3 @@
-@import "colours";
-
 div.contact {
   display: flex;
   flex: 1 1 auto;
@@ -20,6 +18,12 @@ div.contact {
       color: $accent;
 
       svg {
+        fill: $accent;
+        width: 2em;
+        height: 2em;
+      }
+
+      span {
         font-size: 2em;
       }
     }

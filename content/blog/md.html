@@ -1,0 +1,51 @@
+{{ begin("helmet") }}
+<title>{{ $self.title }} | William Henderson</title>
+
+<meta property="og:title" content="{{ $self.title }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://whenderson.dev{{ $self.slug }}">
+<meta property="og:site_name" content="William Henderson">
+<meta property="og:image" content="https://whenderson.dev/images{{ $self.slug }}.png"">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:description" content="{{ $self.description }}">
+<meta property="description" content="{{ $self.description }}">
+
+<meta property="article:author" content="William Henderson">
+<meta property="article:published_time" content="{{ dateformat($self.date, "%a, %d %b %Y %H:%M:%S GMT") }}">
+<meta property="article:modified_time" content="{{ dateformat($self.date, "%a, %d %b %Y %H:%M:%S GMT") }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@w-henderson">
+<meta name="twitter:title" content="{{ $self.title }}">
+<meta name="twitter:description" content="{{ $self.description }}">
+<meta name="twitter:image" content="https://whenderson.dev/images{{ $self.slug }}.png"">
+<meta name="twitter:url" content="https://whenderson.dev{{ $self.slug }}">
+{{ end("helmet") }}
+
+{{ begin("children") }}
+<main class="blogPost">
+  <nav>
+    <span><a href="/">W</a></span>
+    <a href="/#projects">Projects</a>
+    <a href="/#contact">Contact</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+
+  <div>
+    <header>
+      <h1>
+        <span>{{ $self.title }}</span>
+      </h1>
+
+      <div>
+        {{ dateformat($self.date, "%B %e, %Y") }} &bull; {{ timetoread($self.content) }} minute read
+      </div>
+    </header>
+
+    <div class="post">
+      {{ $self.content }}
+    </div>
+  </div>
+</main>
+{{ end("children") }}

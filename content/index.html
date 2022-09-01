@@ -1,0 +1,220 @@
+{{ begin("helmet") }}
+<title>Portfolio | William Henderson</title>
+<meta name="description" content="Hello, I'm William Henderson. I'm a Software Developer from the United Kingdom with a passion for building efficient, robust and beautiful applications in a variety of fields." />
+
+<script>
+  let additionalSkillsVisible = false;
+
+  function toggleAdditionalSkills() {
+    if (additionalSkillsVisible) {
+      document.querySelector("span.additionalSkills").className = "additionalSkills";
+      document.querySelector("span.expandButton").innerHTML = "+";
+    } else {
+      document.querySelector("span.additionalSkills").className = "additionalSkills show";
+      document.querySelector("span.expandButton").innerHTML = "-";
+    }
+
+    additionalSkillsVisible = !additionalSkillsVisible;
+  }
+</script>
+{{ end("helmet") }}
+
+{{ begin("children") }}
+<main>
+  <nav>
+    <span>W</span>
+    <a href="#projects" onclick="document.querySelector('section.projects').scrollIntoView({ behavior: 'smooth' })"">Projects</a>
+    <a href="#contact" onclick="window.scrollTo({ behavior: 'smooth', top: document.body.scrollHeight })"">Contact</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+
+  <header>
+    <div>Hello, I'm</div>
+
+    <h1>
+      <span>William</span>
+      <span>Henderson.</span>
+    </h1>
+
+    <div>
+      I'm a Software Developer from the United Kingdom with a passion for building efficient, robust and beautiful applications in a variety of fields.
+    </div>
+  </header>
+
+  <div class="console">
+    <div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div>
+      <div style="margin-bottom: 1em">
+        <span style="color: #e08374">guest@portfolio</span><span style="color: #7f5c52">:</span><span style="color: #e08374">~</span><span style="color: #7f5c52">$</span>
+        <span>./aboutme</span><br>
+
+        <div class="mainCommand">
+          <img src="/images/icon.svg" alt="ASCII art" />
+
+          <div>
+            <p>
+              <span><b>WILLIAM HENDERSON</b></span>
+            </p>
+
+            <p>
+              <span>Location</span>: Exeter, United Kingdom
+            </p>
+
+            <p>
+              <span>Skills</span>: Rust, React, TypeScript,
+              <span class="expandButton" onclick="toggleAdditionalSkills()">+</span>
+              <span class="additionalSkills">
+                JavaScript, HTML/CSS/Sass, Python, Git/GitHub, SQL, Docker
+              </span>
+            </p>
+
+            <p>
+              <span>Education</span>: Ten level 9 GCSEs including Mathematics, Computer Science and English Language
+            </p>
+
+            <p>
+              <span>GitHub</span>: <a href="https://github.com/w-henderson">w-henderson</a><br />
+              <span>Email</span>: <a href="mailto:hello@whenderson.dev">hello@whenderson.dev</a><br />
+              <span>Twitter</span>: <a href="https://twitter.com/hxswell">@hxswell</a><br />
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 1em">
+        <span style="color: #e08374">guest@portfolio</span>
+        <span style="color: #7f5c52">:</span>
+        <span style="color: #e08374">~</span>
+        <span style="color: #7f5c52">$</span>
+
+        <div class="cursor"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="projects">
+    <h1>Projects</h1>
+
+    <div>
+      Over the course of more than a decade, I've worked on a diverse array of projects, from websites and mobile apps to databases and web servers.
+    </div>
+
+    {{ for($project, "projects.json") }}
+    <div class="project">
+      <script>
+        if (window.innerWidth > 900) document.write(`<div class="image" style="background-image: url('/images/project/vertical/{{ $project.image }}')"></div>`);
+        else document.write(`<div class="image" style="background-image: url('/images/project/horizontal/{{ $project.image }}')"></div>`);
+      </script>
+
+      <div class="content">
+        <div>
+          <h2>{{ $project.name }}</h2>
+          {{ $project.description }}
+        </div>
+
+        <div class="tags">
+          {{ for($tag, $project.tags) }}<div>{{ $tag }}</div>{{ end(for) }}
+        </div>
+
+        <div class="links">
+          {{ ifdefined($project.links.production) }}
+            <a class="primary" href="{{ $project.links.production }}">
+              Live Demo
+              <span class="material-icons">exit_to_app</span>
+            </a>
+          {{ end(ifdefined) }}
+
+          {{ ifdefined($project.links.source) }}
+            <a class="secondary" href="{{ $project.links.source }}">
+              <span class="material-icons">code</span>
+              View Source
+            </a>
+          {{ end(ifdefined) }}
+
+          {{ ifdefined($project.links.blog) }}
+            <a class="secondary" href="{{ $project.links.blog }}">
+              <span class="material-icons">library_books</span>
+              Blog Post
+            </a>
+          {{ end(ifdefined) }}
+        </div>
+      </div>
+    </div>
+    {{ end(for) }}
+  </section>
+
+  <section class="blogPosts">
+    <h1>Blog</h1>
+
+    <div>
+      Here are my most recent blog posts. You can find more of my thoughts and ideas on the <a href="/blog/">blog page</a>.
+    </div>
+
+    <div class="PostCards">
+    {{ for($post, "blog/", limit=3, sortby=$post.date, order="desc") }}
+      <a href="{{ $post.slug }}">
+        <div class="postcard">
+          <div>
+            <h2>{{ $post.title }}</h2>
+
+            <span>{{ dateformat($post.date, "%B %e, %Y") }}</span>
+            <span>{{ timetoread($post.content) }} min</span>
+          </div>
+
+          <p>{{ excerpt($post.content, 100) }}</p>
+        </div>
+      </a>
+      {{ end(for) }}
+    </div>
+  </section>
+
+  <section class="contact">
+    <h1>Contact</h1>
+
+    <div>If you want any more information, or just a chat, please send me a message through one of the following platforms.</div>
+
+    <div>
+      <div class="contact">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"></path></svg>
+        </div>
+
+        <div class="text">
+          <a href="https://github.com/w-henderson" rel="noreferrer" target="_blank">
+            w-henderson
+          </a>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="icon">
+          <span class="material-icons">email</span>
+        </div>
+
+        <div class="text">
+          <a href="mailto:hello@whenderson.dev" rel="noreferrer" target="_blank">
+            hello@whenderson.dev
+          </a>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"></path></svg>
+        </div>
+
+        <div class="text">
+          <a href="https://twitter.com/hxswell" rel="noreferrer" target="_blank">
+            @hxswell
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{{ end("children") }}
