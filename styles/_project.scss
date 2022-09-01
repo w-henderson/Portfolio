@@ -44,6 +44,7 @@ div.project {
 
     div.links {
       display: flex;
+      flex-wrap: wrap;
 
       a {
         display: inline-flex;
