@@ -182,7 +182,7 @@ First, let's look at the build times for Stuart and Hugo as the number of pages 
 
 ![Build times graph](/images/blog_images/Stuart_build_time_graph.png)
 
-As you can see, Stuart consistently beats Hugo in build times by a huge margin, especially when the number of pages is very small. My hypothesis is that since Hugo is a much more complex project, the overhead of setting up the build system and parsing the configuration is far more noticable when the build takes less time.
+As you can see, Stuart consistently beats Hugo in build times by a huge margin, especially when the number of pages is very small. My hypothesis is that since Hugo is a much more complex project, the overhead of setting up the build system and parsing the configuration is far more noticeable when the build takes less time.
 
 For a site with two pages, Stuart takes just 0.95ms to build the site, compared to Hugo's 47ms. This is nearly 50 times faster! As the number of pages increases, the build times of both SSGs scale similarly and the relationship between the two becomes more obviously linear. At 1024 pages, Stuart takes 162ms to build the site, compared to Hugo's 814ms. This is still 5 times faster, and extrapolation would indicate that this is probably a fair estimate of the difference in build time between the two SSGs as the number of pages continues to increase.
 
@@ -206,7 +206,7 @@ In my opinion, one of the coolest features of my blog is its automatically-gener
 
 ![Embed image for this post](/images/blog/building-stuart.png)
 
-I wrote [a blog post](/blog/dynamic-embed-images) about how I implemented this for the Gatsby blog using Puppeteer and a Node.js script, and I found that the easiest way to migrate this to Stuart was to use the same approach. I copied across most of the code from the Gatsby blog, and I updated it so that instead of using GraphQL to query the blog posts, it uses Stuart's metadata system to get the same information. Since, unlike Gatsby, a Stuart project is not an NPM package, I had to create a small NPM package called `embed` in the scripts directory to handle JavaScript dependency management. I also created a `onPostBuild.sh` script which installs the dependencies and runs the Node.js script:
+I wrote [a blog post](/blog/dynamic-embed-images) about how I implemented this for the Gatsby blog using Puppeteer and a Node.js script, and I found that the easiest way to migrate this to Stuart was to use the same approach. I copied across most of the code from the Gatsby blog, and I updated it so that instead of using GraphQL to query the blog posts, it uses Stuart's metadata system to get the same information. Since, unlike Gatsby, a Stuart project is not an NPM package, I had to create a small NPM package called `embed` in the scripts directory to handle JavaScript dependency management. I also created an `onPostBuild.sh` script which installs the dependencies and runs the Node.js script:
 
 ```bash
 cd scripts/embed
