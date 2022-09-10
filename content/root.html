@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
 
-  <!-- Google tag (gtag.js) -->
+  {{ ifeq($env.STUART_ENV, "production") }}
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMZWXY0XC4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -19,6 +19,7 @@
 
     gtag('config', 'G-PMZWXY0XC4');
   </script>
+  {{ end(ifeq) }}
 
   {{ insert("helmet") }}
 </head>
