@@ -64,6 +64,18 @@
     }
   },
   {
+    "name": "Stuart",
+    "description": "Stuart is a very fast and flexible static site generator, with build times as low as 0.1ms per page. Written in Rust, it is designed to be easier to use than other SSGs, while still beating them in the benchmarks. It is also easy to extend with custom build scripts that integrate with the core build system, as well as dynamically-loaded plugins written in Rust. At its core is a powerful templating system which can source and manipulate data from Markdown and JSON files, as well as the template files, before rendering it all to static HTML. This site is built with Stuart!",
+    "image": "stuart.webp",
+    "tags": [
+      "Rust"
+    ],
+    "links": {
+      "source": "https://github.com/w-henderson/Stuart",
+      "blog": "/blog/building-stuart"
+    }
+  },
+  {
     "name": "Authenticate",
     "description": "Authenticate is a simple two-factor authentication app, built with React Native and available on the Google Play store. It was originally built to provide a faster, more modern alternative to older two-factor authentication apps. Designed around the core principles of ease-of-use, speed and security, it includes cryptographic implementations from scratch for all the required algorithms, including SHA-1, HMAC-SHA-1, HOTP and TOTP, in pure TypeScript. Furthermore, it is completely open-source and free to use, making it a great choice for two-factor authentication.",
     "image": "authenticate.webp",
