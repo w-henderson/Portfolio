@@ -25,7 +25,7 @@ fn increment_counter() {
 
 When this code is compiled, the compiler generates the following assembly code.
 
-```nasm
+```x86asm
 add QWORD PTR [COUNTER], 1
 ```
 
