@@ -21,11 +21,14 @@ main.blogPost {
         margin: 1.3em 0;
       }
 
+      code {
+        font-family: "Fira Mono";
+      }
+
       pre code.hljs {
         display: block;
         max-width: 800px;
 
-        font-family: "Fira Mono";
         font-size: 1rem;
         background-color: white;
         box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
@@ -135,7 +138,8 @@ main.blogPost {
         overflow-wrap: break-word;
       }
 
-      img {
+      img,
+      video {
         display: block;
         max-width: 100%;
         box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
