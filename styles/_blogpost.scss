@@ -15,7 +15,6 @@ main.blogPost {
     div.post {
       font-size: 20px;
       line-height: 26px;
-      margin-bottom: 96px;
 
       p {
         margin: 1.3em 0;
@@ -145,6 +144,26 @@ main.blogPost {
         box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         margin: 1.5em auto;
+      }
+    }
+
+    footer {
+      text-align: center;
+      margin: 64px 0;
+      opacity: 0.8;
+
+      p {
+        a {
+          text-decoration: underline;
+        }
+
+        &:first-child {
+          font-size: 1.2em;
+        }
+
+        &:last-child {
+          font-size: 0.9em;
+        }
       }
     }
   }

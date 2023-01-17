@@ -46,6 +46,16 @@
     <div class="post">
       {{ $self.content }}
     </div>
+
+    <footer>
+      <p>
+        Thanks for reading!
+      </p>
+
+      <p>
+        Copyright &copy; <a href="https://github.com/w-henderson">William Henderson</a> {{ dateformat($self.date, "%Y") }}
+      </p>
+    </footer>
   </div>
 </main>
 {{ end("children") }}
