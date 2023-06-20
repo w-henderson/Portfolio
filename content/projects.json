@@ -1,5 +1,16 @@
 [
   {
+    "name": "Humphrey",
+    "description": "Humphrey is a very fast, robust and flexible HTTP/1.1 web server, with first-party support for WebSocket, JSON, dynamically-loaded plugins, and with no dependencies. Written in Rust, it surpassed the performance of web servers Apache and NGINX in benchmarks by more than double, as well as providing a developer-friendly and comprehensively-documented suite of Rust crates for building web applications with Humphrey.",
+    "image": "humphrey.webp",
+    "tags": [
+      "Rust"
+    ],
+    "links": {
+      "source": "https://github.com/w-henderson/Humphrey"
+    }
+  },
+  {
     "name": "Equion",
     "description": "Equion is a mathematics-focussed chat platform. It has built-in support for LaTeX and Markdown, high-quality low-latency voice chat and screen sharing, and is lightweight and lightning-fast thanks to Rust and Tauri. I built Equion so my friends and I could share mathematics problems with each other while revising for exams.",
     "image": "equion.webp",
@@ -20,6 +31,18 @@
     }
   },
   {
+    "name": "Stuart",
+    "description": "Stuart is a very fast and flexible static site generator, with build times as low as 0.1ms per page. Written in Rust, it is designed to be easier to use than other SSGs, while still beating them in the benchmarks. It is also easy to extend with custom build scripts that integrate with the core build system, as well as dynamically-loaded plugins written in Rust. At its core is a powerful templating system which can source and manipulate data from Markdown and JSON files, as well as the template files, before rendering it all to static HTML. This site is built with Stuart!",
+    "image": "stuart.webp",
+    "tags": [
+      "Rust"
+    ],
+    "links": {
+      "source": "https://github.com/w-henderson/Stuart",
+      "blog": "/blog/building-stuart"
+    }
+  },
+  {
     "name": "TidesX: UK Tide Times",
     "description": "TidesX is an intuitive and easy-to-use app for checking the tide times anywhere in the UK. It features predictions and live information for over 600 coastal locations, taken straight from the UK Hydrographic Office. I built TidesX after unsuccessfully searching for a simple and good-looking tide times app, and it has since served over 150,000 tidal predictions for locations all around the country.",
     "image": "tidesx.webp",
@@ -33,17 +56,6 @@
       "source": "https://github.com/w-henderson/TidesX",
       "production": "https://play.google.com/store/apps/details?id=com.whenderson.tidesx",
       "blog": "/blog/migrating-to-cloudflare-workers"
-    }
-  },
-  {
-    "name": "Humphrey",
-    "description": "Humphrey is a very fast, robust and flexible HTTP/1.1 web server, with support for static and dynamic content through its Rust crate and plugin system. It has no dependencies when only using default features, and the binary is easily extensible with a flexible configuration file and dynamically-loaded plugins. It also provides a WebSocket API for the easy integration of WebSockets into your application, a JSON manipulation crate, and a simple authentication system for authenticating users and managing sessions.",
-    "image": "humphrey.webp",
-    "tags": [
-      "Rust"
-    ],
-    "links": {
-      "source": "https://github.com/w-henderson/Humphrey"
     }
   },
   {
@@ -61,18 +73,6 @@
     "links": {
       "source": "https://github.com/w-henderson/Kascreech",
       "production": "https://kascreech.whenderson.dev"
-    }
-  },
-  {
-    "name": "Stuart",
-    "description": "Stuart is a very fast and flexible static site generator, with build times as low as 0.1ms per page. Written in Rust, it is designed to be easier to use than other SSGs, while still beating them in the benchmarks. It is also easy to extend with custom build scripts that integrate with the core build system, as well as dynamically-loaded plugins written in Rust. At its core is a powerful templating system which can source and manipulate data from Markdown and JSON files, as well as the template files, before rendering it all to static HTML. This site is built with Stuart!",
-    "image": "stuart.webp",
-    "tags": [
-      "Rust"
-    ],
-    "links": {
-      "source": "https://github.com/w-henderson/Stuart",
-      "blog": "/blog/building-stuart"
     }
   },
   {
