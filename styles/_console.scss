@@ -79,13 +79,17 @@ div.mainCommand {
                 user-select: none;
             }
 
-            &.additionalSkills {
+            &.hiddenInfo {
                 color: unset;
                 display: none;
 
                 &.show {
                     display: block;
                 }
+            }
+
+            sup {
+                line-height: 0;
             }
         }
 
@@ -94,7 +98,7 @@ div.mainCommand {
             text-decoration: underline !important;
 
             &:hover {
-                color: $accent  !important;
+                color: $accent !important;
             }
         }
     }
