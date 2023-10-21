@@ -37,6 +37,7 @@ rss = f"""<?xml version="1.0" encoding="UTF-8" ?>
   <description>William Henderson's blog.</description>
   <language>en-gb</language>
   <lastBuildDate>{now}</lastBuildDate>
+  <generator>Stuart</generator>
   <image>
     <url>https://whenderson.dev/images/icon.png</url>
     <title>William Henderson</title>
