@@ -79,7 +79,7 @@
             </p>
 
             <p>
-              <span>Skills</span>: Rust, TypeScript, React, C,<span id="additionalSkillsButton" class="expandButton" onclick="toggleAdditionalSkills()">+</span>
+              <span>Skills</span>: Rust, C, TypeScript, React,<span id="additionalSkillsButton" class="expandButton" onclick="toggleAdditionalSkills()">+</span>
               <span id="additionalSkills" class="hiddenInfo">
                 JavaScript, HTML/CSS/Sass, Python, Git/GitHub, SQL, Docker
               </span>
@@ -105,6 +105,31 @@
     </div>
   </div>
 
+  <section class="blogPosts">
+    <h2>Blog</h2>
+
+    <div>
+      Here are my most recent blog posts. You can find more of my thoughts and ideas on the <a href="/blog/">blog page</a>.
+    </div>
+
+    <div class="PostCards">
+    {{ for($post, "blog/", limit=3, sortby=$post.date, order="desc") }}
+      <a href="{{ $post.slug }}">
+        <div class="postcard">
+          <div>
+            <h3>{{ $post.title }}</h3>
+
+            <span>{{ dateformat($post.date, "%B %e, %Y") }}</span>
+            <span>{{ timetoread($post.content) }} min</span>
+          </div>
+
+          <p>{{ excerpt($post.content, 100) }}</p>
+        </div>
+      </a>
+      {{ end(for) }}
+    </div>
+  </section>
+  
   <section class="projects">
     <h2>Projects</h2>
 
@@ -154,31 +179,6 @@
       </div>
     </div>
     {{ end(for) }}
-  </section>
-
-  <section class="blogPosts">
-    <h2>Blog</h2>
-
-    <div>
-      Here are my most recent blog posts. You can find more of my thoughts and ideas on the <a href="/blog/">blog page</a>.
-    </div>
-
-    <div class="PostCards">
-    {{ for($post, "blog/", limit=3, sortby=$post.date, order="desc") }}
-      <a href="{{ $post.slug }}">
-        <div class="postcard">
-          <div>
-            <h3>{{ $post.title }}</h3>
-
-            <span>{{ dateformat($post.date, "%B %e, %Y") }}</span>
-            <span>{{ timetoread($post.content) }} min</span>
-          </div>
-
-          <p>{{ excerpt($post.content, 100) }}</p>
-        </div>
-      </a>
-      {{ end(for) }}
-    </div>
   </section>
 
   <section class="contact">
