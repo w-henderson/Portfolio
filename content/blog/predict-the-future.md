@@ -57,9 +57,9 @@ Dron found a very useful [paper](http://www.ccnss.org/ccn_2014/materials/pdf/sig
 
 The scoring function we ended up using is given by:
 
-![S(c, n) = \dfrac{\binom{n}{c} \cdot 0.9^c \cdot 0.1^{n-c}}{\binom{n}{0.9n} \cdot 0.9^{0.9n} \cdot 0.1^{0.1n}}](/images/blog_images/Headlights_scoring.png)
+{{ math("S(c, n) = \dfrac{\binom{n}{c} \cdot 0.9^c \cdot 0.1^{n-c}}{\binom{n}{0.9n} \cdot 0.9^{0.9n} \cdot 0.1^{0.1n}}") }}
 
-where `c` is the number of correct predictions in `n` predictions. This function is analagous to the binomial distribution, normalised such that the maximum score is 1.
+where {{ mathi("c") }} is the number of correct predictions in {{ mathi("n") }} predictions. This function is analogous to the binomial distribution, normalised such that the maximum score is 1.
 
 After figuring this out, our first prototype was complete so we called it a night and went to sleep.
 

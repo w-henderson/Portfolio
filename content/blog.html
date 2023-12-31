@@ -32,7 +32,7 @@
             <h3>{{ $post.title }}</h3>
 
             <span>{{ dateformat($post.date, "%B %e, %Y") }}</span>
-            <span>{{ timetoread($post.content) }} min</span>
+            <span>{{ timetoread($post.markdown) }} min</span>
           </div>
 
           <p>{{ excerpt($post.content, 100) }}</p>
@@ -54,7 +54,7 @@
 
             <span>{{ dateformat($post.date, "%B %e, %Y") }}</span>
             <span class="bull">&bull;</span>
-            <span>{{ timetoread($post.content) }} minute read</span>
+            <span>{{ timetoread($post.markdown) }} minute read</span>
           </div>
 
           <p>{{ excerpt($post.content, 100) }}</p>
