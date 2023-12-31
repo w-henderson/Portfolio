@@ -6,3 +6,6 @@ author = "William Henderson <william-henderson@outlook.com>"
 strip_extensions = true
 save_data_files = false
 save_metadata = true
+
+[dependencies]
+stuart_math = "./vendor/stuart_math.dll;./vendor/stuart_math.so;https://github.com/w-henderson/stuart-math"

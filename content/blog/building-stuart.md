@@ -86,18 +86,18 @@ For each file in the tree, the `Node::process` function is called, which, if suc
 One of the most important parts of a static site generator is its template engine. This is responsible for combining data from a number of sources with the template pages to produce the final HTML output. This is perhaps easier to understand with an example. Consider the following template for a Markdown blog post:
 
 ```html
-{{ begin("main") }}
-<h1>{{ $self.title }}</h1>
-<h2>{{ $self.author }} • {{ dateformat($self.date, "%d %B %Y") }}</h2>
+\{{ begin("main") }}
+<h1>\{{ $self.title }}</h1>
+<h2>\{{ $self.author }} • \{{ dateformat($self.date, "%d %B %Y") }}</h2>
 
 <ul>
-  {{ for($tag in $self.tags) }}
-  <li>{{ $tag }}</li>
-  {{ end(for) }}
+  \{{ for($tag in $self.tags) }}
+  <li>\{{ $tag }}</li>
+  \{{ end(for) }}
 </ul>
 
-{{ $self.content }}
-{{ end("main") }}
+\{{ $self.content }}
+\{{ end("main") }}
 ```
 
 When combined with the data from the frontmatter of a Markdown file, which is referred to as `$self` in the template, this could produce the following HTML:
@@ -120,7 +120,7 @@ The `begin("main")` and `end("main")` functions in the template above indicate h
 ```html
 <html>
 <body>
-{{ insert("main") }}
+\{{ insert("main") }}
 </body>
 </html>
 ```
