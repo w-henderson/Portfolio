@@ -77,7 +77,7 @@ You've probably seen this result before, but we've shown that the entries of {{ 
 
 Let's look at what happens as {{ mathi("k") }} gets larger.
 
-{{ math("T^4 = \begin{bmatrix} 0.3125 & 0.1875 & 0.5 \\ 0.1875 & 0.125 & 0.6875 \\ 0 & 0 & 1 \end{bmatrix} \quad T^8 = \begin{bmatrix} 0.132\ldots & 0.082\ldots & 0.785\ldots \\ 0.082\ldots & 0.050\ldots & 0.867\ldots \\ 0 & 0 & 1 \end{bmatrix}") }}
+{{ math("T^4 = \begin{bmatrix} 0.3125 & 0.1875 & 0.5 \\ 0.1875 & 0.125 & 0.6875 \\ 0 & 0 & 1 \end{bmatrix} \quad T^8 \approx \begin{bmatrix} 0.132 & 0.082 & 0.785 \\ 0.082 & 0.050 & 0.867 \\ 0 & 0 & 1 \end{bmatrix}") }}
 
 After 4 steps, if we started on the left, we have exactly a 50% chance of having been absorbed, and even more than that if we started in the middle. This makes intuitive sense - the middle state is "closer" to the absorbing state (in the sense that it can transition there in one step as opposed to two). After 8 steps, these probabilities have increased even more, and we can see the {{ mathi("Q") }} submatrix tending towards the zero matrix (the proof is left as an exercise to the reader, but it just falls out of the definition of an absorbing Markov chain).
 
@@ -120,13 +120,11 @@ where {{ mathi("I") }} is the identity matrix. And there we have it, the long-aw
 
 Let's not forget why we wanted this in the first place: to find out which squares are more and less likely to be visited. We can do this by looking at the first row of {{ mathi("N") }}, which gives the expected number of times we visit each state starting from the start square.
 
-Plotting time! I've labelled each square on the board with an index, leaving out the finish square, and I've represented the "missing a turn" state as index 62.
+Plotting time! Let's plot the expected number of times we visit each square as a heatmap on the board. The special squares are never visited, as in our model we immediately transition to their corresponding destinations. Really, we're thinking about the expected number of times we *start our turn on* each square.
 
-![The expected number of times we visit each square](/images/blog_images/road_safety_squares.png)
+![The expected number of times we visit each square](/images/blog_images/road_safety_heatmap.png)
 
-Unsurprisingly, the start square is guaranteed to be visited, and the special squares are never visited, as in our model we immediately transition to their corresponding destinations. Really, we're thinking about the expected number of times we *start our turn on* each square.
-
-There are peaks on the squares that are the targets for special squares. The most likely square to be visited is index 22, which, looking at the board, is not a surprise: it's the target for both square 20's "move forward 2" and square 26's "move back 4"!
+The "hotter" squares are the targets for special squares. The most likely square to be visited is indicated in white, and, looking at the board, it's not a surprise that it's the most visited: it's the target for both square 20's "move forward 2" and square 26's "move back 4"!
 
 We can also use the fundamental matrix to find the expected number of turns in the game, or formally, the expected number of steps before being absorbed. This is given by the sum of the first row of {{ mathi("N") }}:
 
