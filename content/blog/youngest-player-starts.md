@@ -1,6 +1,6 @@
 ---
 slug: "/blog/youngest-player-starts"
-date: "2024-01-01"
+date: "2024-01-03"
 title: "Youngest Player Starts: Board Games and Markov Chains"
 description: "Exploring how Markov chains can be used to analyse a simple Snakes and Ladders-style board game, and discovering just how much of an advantage the youngest player has."
 ---
@@ -153,7 +153,11 @@ P(W_1) &= \sum_{i=1}^\infty P(x_1 = i) P(x_2 \geq i) \cdots P(x_n \geq i) \\
 &= \sum_{i=1}^\infty P(X = i) P(X \geq i)^{n-1}
 \end{align*}") }}
 
-But how do we calculate these probabilities?
+We'll define player {{ mathi("i") }}'s "advantage" over player {{ mathi("j") }}, {{ mathi("A^i_j") }}, to be the number of times more likely they are to win than player {{ mathi("j") }}. We'll also define their "advantage over equality" {{ mathi("A^i_E") }} to be the number of times more likely they are to win than if all players had an equal chance of winning.
+
+{{ math("A^i_j = \frac{P(W_i)}{P(W_j)} \quad A^i_E = n P(W_i)") }}
+
+But how do we compute all the probabilities in our formula?
 
 ### The Distribution
 
@@ -178,7 +182,7 @@ Let's answer the question. For real this time, we've finally done enough maths.
 
 I was playing with my sister and my dad, so {{ mathi("n = 3") }}. Applying the formulae above - and summing until the probabilities get small enough - we get
 
-{{ math("P(W_1) \approx 0.397") }}
+{{ math("P(W_1) \approx 0.397 \quad A^1_E \approx 1.19") }}
 
 That's nearly 20% more likely than if all players had an equal chance of winning! So, if you're playing the Road Safety Game, the optimal strategy is to be the youngest player. Very useful indeed.
 
@@ -197,7 +201,7 @@ That's a lot of symbols, so let's plot it for {{ mathi("n \in [2, 6]") }}, the n
 
 ![Probability of winning for each player](/images/blog_images/road_safety_final_plot.png)
 
-As we might expect, the earlier you play in the sequence, the more likely you are to win. Let's look at the advantage of the youngest player over equality ({{ mathi("\frac{1}{n}") }}), the second player, and the last player, for {{ mathi("n \in [2, 6]") }}.
+As we might expect, the earlier you play in the sequence, the more likely you are to win. Let's look at the advantage of the youngest player over equality, the second player, and the last player, for {{ mathi("n \in [2, 6]") }}.
 
 ![Advantage of the youngest player](/images/blog_images/road_safety_advantages.png)
 
