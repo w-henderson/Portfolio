@@ -8,4 +8,4 @@ save_data_files = false
 save_metadata = true
 
 [dependencies]
-stuart_math = "./vendor/stuart_math.dll;./vendor/stuart_math.so;https://github.com/w-henderson/stuart-math"
+stuart_math = "./vendor/stuart-math.mjs;https://github.com/w-henderson/stuart-math/releases/download/v0.2.0/stuart-math.mjs"
