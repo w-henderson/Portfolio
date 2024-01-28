@@ -2,7 +2,7 @@
 slug: "/blog/embedding-v8-in-rust"
 date: "2024-01-27"
 title: "Calling JavaScript functions from Rust by embedding V8"
-description: "TODO"
+description: "How, and why, I embedded V8 in Rust to support JavaScript plugins in my static site generator, Stuart."
 ---
 
 Being the language of the web, JavaScript seems to be everywhere and do everything. And sometimes, as much as I wish it weren't the case, it's the best tool for the job. In this post, I'll be discussing how I used V8 to add support for JavaScript plugins to my static site generator, Stuart, as well as why I thought this was a remotely good idea in the first place.
