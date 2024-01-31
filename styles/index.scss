@@ -178,6 +178,10 @@ main {
 
         >a {
             margin-left: 32px;
+
+            &:not(.blogLink) {
+                display: none;
+            }
         }
     }
 
