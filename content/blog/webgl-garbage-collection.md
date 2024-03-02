@@ -107,6 +107,10 @@ After about 8 seconds, the first major GC happens, and a few frames later, the G
 
 Interestingly, the only reason a major GC is triggered is because the new `Uint8Array`s created when initialising the texture to a single white pixel don't seem to be collected by the minor GCs, so the heap slowly increases in size. If they are replaced with `new Array(4).fill(255)` (which has the same effect), then the minor GCs collect everything and no major GC is ever necessary. I can't find any documentation on why this is the case, but if you happen to be an expert on V8's garbage collector, please [let me know](mailto:hello@whenderson.dev) (and sorry about any mistakes I have likely made in this post!).
 
+<small>
+<strong>Update (29th February 2024)</strong>: This is because ArrayBuffer objects are allocated outside the V8 heap, and pointers to them are stored in an <code>ExternalPointerTable</code> (EPT) which doesn't <a href="https://groups.google.com/g/v8-dev/c/nXVUEMvVilU">yet</a> support minor GCs. The EPT is a memory safety feature: objects on the heap referring to things outside it have indices into the EPT instead of raw pointers, so even if some bug causes an attacker to be able to corrupt the V8 heap, no raw pointers are available to exploit to escape the sandbox! You can read more in <a href="https://docs.google.com/document/d/1V3sxltuFjjhp_6grGHgfqZNK57qfzGzme0QTk0IXDHk">this document</a>. Thanks to Aapo Alasuutari for letting me know about this!
+</small>
+
 ## My Problem
 
 So, now we know how garbage collection works in V8, and the basics of how it interacts with Chrome's implementation of WebGL, I can finally explain why I ended up down this rabbit hole in the first place.
