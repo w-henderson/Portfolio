@@ -1,6 +1,6 @@
 ---
 slug: "/blog/second-year-at-cambridge"
-date: "2024-06-04"
+date: "2024-06-18"
 title: "Surviving my second year of CompSci at Cambridge"
 description: "Looking back at my second year studying Computer Science at Cambridge."
 ---
