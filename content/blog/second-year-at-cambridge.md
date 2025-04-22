@@ -139,17 +139,9 @@ I continued going to concerts and formals, which was really fun. In particular, 
 
 Also during Lent term, I took on a role on the committee of the 2024 Churchill May Ball as their IT Officer, which, to be honest, was a pretty big mistake. I thought I was just going to have to build a website and get a free ticket to the ball, but it turned out to be way more work than I expected. I had to go to a lot of completely irrelevant meetings (although I'll admit that I did miss a few), liaise with disorganised people (although the people in charge were very organised), and do a lot more of the design and writing work than I thought I would. It's all done now though, and the ball was great fun! (even if they did run out of food very quickly...)
 
-As you might expect, I spent the vast majority of my Easter break studying for my upcoming exams, mostly doing exam questions. However, I did manage to escape for a few days to the south of France with my now girlfriend (!!) Elizabeth, which was an absolutely incredible trip where we ate a lot of amazing food, enjoyed the beautiful scenery, and had a lot of fun.
-
-![South of France](/images/blog_images/second_year_france.png)
-
-*Left to right: us in Villefranche-sur-Mer, the view along the coast*
-
-We returned to Cambridge very happy, ready to face exam term, together.
-
 ## Easter Term
 
-Okay, I'm getting distracted... let's talk about EXAM TERM.
+Anyway, let's talk about EXAM TERM.
 
 ![Collage of photos from Easter term](/images/blog_images/second_year_easter.png)
 
@@ -200,11 +192,7 @@ I think quite a lot of people dropped quite a lot of courses, but I was afraid t
 
 ## After Exams and Summer
 
-![Collage of photos from June](/images/blog_images/second_year_summer.png)
-
-*Left to right: in a cafe in London, the view from a rooftop bar in London, me and Elizabeth at the Trinity May Week Concert, us at the Churchill May Ball*
-
-Exams only finished a week and a half ago, but in that time I've been up to so many fun things. The five of us went to London for a very fun few days, and me and Elizabeth went to the Trinity May Week Concert, which was incredible, and the Churchill May Ball, which was great fun too.
+Exams only finished a week and a half ago, but in that time I've been up to so many fun things. We went to London for a very fun few days, and I went to the Trinity May Week Concert, which was incredible, and the Churchill May Ball, which was great fun too.
 
 I'm enjoying relaxing and having no work to do, but I'm also looking forward to starting my internship at Citadel Securities in a few weeks. I'm very excited to spend the summer in London too - it's going to be an amazing few months!
 
