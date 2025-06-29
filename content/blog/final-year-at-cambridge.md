@@ -105,7 +105,7 @@ I might have been free from Category Theory, but I wasn't free from doing a modu
 
 It was really interesting to properly study concepts I have worked with in the past, but never really understood, especially relaxed memory. The relationship between what the programmer wants the hardware to do, what the hardware manufacturer says the hardware will do, and what the hardware actually does turns out to be much more nuanced than I ever imagined, and I am now absolutely terrified of writing any concurrent program for anything other than x86.
 
-In terms of assessment, this module also had two assignments, both of which were fairly practical. They went a million times better than Category Theory (although still not as well as I would've liked to have done, but maybe my standards are too high), and, unlike Category Theory, didn't take up every waking second of my term!
+In terms of assessment, this module also had two assignments, both of which were fairly practical. They went a lot better than Category Theory (although still not as well as I would've liked, but hey, I survived), and, unlike Category Theory, didn't take up every waking second of my term!
 
 ### Courses
 
