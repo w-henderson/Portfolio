@@ -137,6 +137,14 @@ main.blogPost {
         overflow-wrap: break-word;
       }
 
+      hr {
+        margin: 3em 0;
+        border: 1px solid $text;
+        border-radius: 1px;
+        width: 200px;
+        place-self: center;
+      }
+
       img,
       video {
         display: block;
