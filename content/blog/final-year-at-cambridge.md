@@ -75,7 +75,7 @@ I largely completed the implementation of the project in Michaelmas term and ove
 
 *The performance of WebPL relative to industry-standard SWI-Prolog*
 
-While I made sure not to have "beat the competition in execution time, memory usage, and binary size" as an explicit success criterion of my project *juuuuust* in case, it was always the number one goal at the back of my mind, and it was an incredibly satisfying one to achieve.
+While I made sure not to have "beaten the competition in execution time, memory usage, and binary size" as an explicit success criterion of my project *juuuuust* in case, it was always the number one goal at the back of my mind, and it was an incredibly satisfying one to achieve.
 
 I was actually surprised at just how far behind the other implementations were, so I dug into it a bit deeper and ended up down a really interesting rabbit hole. In short, WebAssembly doesn't yet support proper exceptions, which the compiler Emscripten uses to implement the C `setjmp`/`longjmp` functions, which SWI-Prolog (and others) in turn use to implement Prolog exceptions. However, instead of just failing to compile the program, Emscripten quietly inserts code to delegate exception handling to JavaScript, meaning that every single call to a *potentially* exception-raising function has to cross the WebAssembly-JavaScript boundary (twice!), which is very expensive. To get ~more marks~ a fairer comparison, I forked SWI-Prolog and modified it to use experimental native WebAssembly exceptions, which successfully brought its performance much closer to that of WebPL (but not surpassing it in the majority of cases 😎).
 
@@ -97,7 +97,7 @@ Anyway, we're getting ahead of ourselves - before I submitted my dissertation I 
 
 *Clockwise: formal at Selwyn with Dron, "Castle Mound in Cambridge", playing music with Dron, Sam, and Yuting, Jack's with my grandparents*
 
-Lent term couldn't have got off to a worse start with the absolute disaster that was the Category Theory exam. In the past, I've always been able to overcome difficult problems just by working really hard at them, so it was something of a new experience for me to put in all this effort over so many months just to eventually take the L. Fortunately, my life rapidly improved once I was free from the shackles of Category Theory, and I was able to enjoy the term!
+Lent term couldn't have got off to a worse start with the absolute disaster that was the Category Theory exam. In the past, I've always been able to overcome difficult problems just by working really hard at them, so it was something of a new experience for me to put in all this effort over so many months just to eventually take the L. Fortunately, my life rapidly improved once I was free from the shackles of Category Theory, and I was able to start enjoying my final year at Cambridge!
 
 ### Multicore Semantics
 
@@ -117,11 +117,11 @@ Of course, Cambridge couldn't possibly be so kind as to let me focus on my modul
 
 - [Quantum Computing](https://www.cl.cam.ac.uk/teaching/2425/QuantComp/): an introduction to quantum computing, covering the basics of quantum mechanics, quantum gates, and quantum algorithms. My key takeaway from this course is that quantum computing is really confusing and I don't understand it at all, but it was an interesting course nonetheless. However, I ended up dropping it because I already had enough easier courses for the exam.
 
-- [E-Commerce](https://www.cl.cam.ac.uk/teaching/2425/ECommerce/): a follow-on from Business Studies, focussing on e-commerce businesses. The same criticisms apply as for Business Studies, but it did save my life in the exam when I couldn't do the Types question that I really should have been able to do, so I can't complain too much.
+- [E-Commerce](https://www.cl.cam.ac.uk/teaching/2425/ECommerce/): a follow-on from Business Studies, focussing on e-commerce businesses. The same criticisms apply as for Business Studies (chaotic and ill-defined), but it did save my life in the exam when I couldn't do the Types question that I really should have been able to do, so I can't complain too much.
 
 ### Life
 
-Being free of Category Theory and having a slightly more manageable workload meant that I was able to do a lot more fun things in Lent term! My friends and I had dinner together almost every day, and we also formed a "band" (in the loosest sense of the word) and played music together which was so much fun. My grandparents visited for a few days, and I really enjoyed showing them all the things that have changed since their time (and some of the things that haven't changed a bit!).
+Being free of Category Theory and having a slightly more manageable workload meant that I was able to do a lot more fun things in Lent term! My friends and I had dinner together almost every day, and we also formed a "band" (in the loosest sense of the word) and played music together which was so much fun. My grandparents visited for a few days, and I really enjoyed showing them all the things that have changed since their time. The now bustling West Cambridge site, home of the Computer Science department (alongside a growing number of others), was just empty fields when my grandfather studied here many years ago!
 
 About halfway through the term, I escaped the stress of Cambridge for a weekend and went to the Alps (don't tell John), which was amazing. Of course, it would have been very irresponsible to completely switch off from work, so I took my laptop and actually did the most productive work I've done all year while I was there. It's amazing how a change of scenery can help you lock in and get things done!
 
@@ -129,7 +129,7 @@ About halfway through the term, I escaped the stress of Cambridge for a weekend 
 
 *Left to right: dissertating in Cornwall, Germany, Austria, and with my sister*
 
-I continued my streak of being extremely productive in scenic locations over the Easter holiday, when I visited my family in Cornwall, went to Barcelona for a long weekend with my mum and my sister (which was incredible), and of course did a huge amount of work at home. It was the holiday before my final exam term, after all, so I did spend almost all of my time working. I think I averaged about 5 or 6 hours a day over the month, but I still wasn't quite where I wanted to be by the time I got back to Cambridge. Fortunately, the course workload in Easter term was much lighter than in Lent, so there was just about enough time to catch up.
+I continued my streak of being extremely productive in scenic locations over the Easter break, when I visited my family in Cornwall, went to Barcelona for a long weekend with my mum and my sister (which was incredible), and of course did a huge amount of work at home. It was right before my final exam term, after all, so I did spend almost all of my time working. I think I averaged about 5 or 6 hours a day over the month, but I still wasn't quite where I wanted to be by the time I got back to Cambridge. Fortunately, the course workload in Easter term was much lighter than in Lent, so there was just about enough time to catch up.
 
 ## Easter Term
 
@@ -153,7 +153,7 @@ Before the exams, I did have one last course to get through:
 
 Unlike in previous exam terms, I actually had a life this time. This was a conscious choice on my part to minimise the burnout that was constantly trying to creep in, and despite many of my friends making the opposite choice to go "hermit mode" and lock in at the expense of everything else, I took every opportunity any of them gave me to go out and do something fun.
 
-I went to several concerts, had plenty of dinners out, and even went to a couple of parties. I also went for a lot of walks around Cambridge by myself, as well as "taking up" running (I went for like three runs), which was way more enjoyable than I expected. Of course, I still did a huge amount of work, but by doing meaningful things outside of work, I was just about able to keep the burnout at bay.
+I went to several concerts, had plenty of dinners out, and even went to a couple of parties. I also went for a lot of walks around Cambridge by myself, as well as "taking up" running (I went for like four runs), which was way more enjoyable than I expected. Of course, I still did a huge amount of work, but by doing meaningful things outside of work, I was just about able to keep the burnout at bay.
 
 ## Exams
 
