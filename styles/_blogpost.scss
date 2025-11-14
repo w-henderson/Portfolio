@@ -162,6 +162,27 @@ main.blogPost {
       small {
         opacity: 0.8;
       }
+
+      span[data-tooltip] {
+        position: relative;
+        border-bottom: 2px dotted $text;
+        cursor: help;
+
+        &:hover::after {
+          display: block;
+          position: absolute;
+          font-style: normal;
+          top: -40px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: max-content;
+          content: attr(data-tooltip);
+          background: white;
+          box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+          border-radius: 12px;
+          padding: .25em;
+        }
+      }
     }
 
     footer {
