@@ -3,7 +3,7 @@ div.PostCards {
   flex-wrap: wrap;
   gap: 32px;
   width: 100%;
-  margin-bottom: 96px;
+  margin-bottom: 128px;
 
   a {
     min-width: min(300px, 100%);
@@ -13,7 +13,7 @@ div.PostCards {
   div.postcard {
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 48px rgba(0, 0, 0, 0.05);
     padding: 32px;
     height: 100%;
 

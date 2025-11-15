@@ -1,44 +1,14 @@
 {{ begin("helmet") }}
-<title>Portfolio | William Henderson</title>
-<meta name="description" content="Hello, I'm William Henderson. I'm a Computer Science student at the University of Cambridge with a passion for solving problems by developing efficient, robust and maintainable software, built with performance in mind.">
-
-<script>
-  let additionalSkillsVisible = false;
-  let provisionalNoteVisible = false;
-
-  function toggleAdditionalSkills() {
-    if (additionalSkillsVisible) {
-      document.querySelector("span#additionalSkills").className = "hiddenInfo";
-      document.querySelector("span#additionalSkillsButton").innerHTML = "+";
-    } else {
-      document.querySelector("span#additionalSkills").className = "hiddenInfo show";
-      document.querySelector("span#additionalSkillsButton").innerHTML = "-";
-    }
-
-    additionalSkillsVisible = !additionalSkillsVisible;
-  }
-
-  function toggleProvisionalNote() {
-    if (provisionalNoteVisible) {
-      document.querySelector("span#provisionalNote").className = "hiddenInfo";
-      document.querySelector("span#provisionalNoteButton").innerHTML = "<sup>i</sup>";
-    } else {
-      document.querySelector("span#provisionalNote").className = "hiddenInfo show";
-      document.querySelector("span#provisionalNoteButton").innerHTML = "<sup>-</sup>";
-    }
-
-    provisionalNoteVisible = !provisionalNoteVisible;
-  }
-</script>
+<title>William Henderson</title>
+<meta name="description" content="Software engineer that actually goes outside, exploring computer science, life, and the world.">
 {{ end("helmet") }}
 
 {{ begin("children") }}
 <main>
   <nav>
-    <span>W</span>
-    <a href="#projects" onclick="document.querySelector('section.projects').scrollIntoView({ behavior: 'smooth' })">Projects</a>
-    <a href="#contact" onclick="window.scrollTo({ behavior: 'smooth', top: document.body.scrollHeight })">Contact</a>
-    <a href="/blog/" class="blogLink">Blog</a>
+    <span><a href="/">W</a></span>
+    <a href="#" onclick="document.querySelector('section#posts').scrollIntoView({ behavior: 'smooth' })">Posts</a>
+    <a href="#" onclick="window.scrollTo({ behavior: 'smooth', top: document.body.scrollHeight })">Contact</a>
   </nav>
 
   <header>
@@ -50,69 +20,13 @@
     </h1>
 
     <div>
-      I'm a Computer Science student at the University of Cambridge with a passion for solving problems by developing efficient, robust and maintainable software, built with performance in mind.
+      Software engineer that actually goes outside, exploring computer science, life, and the world.
     </div>
   </header>
 
-  <div class="console">
-    <div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
-    <div>
-      <div style="margin-bottom: 1em">
-        <span style="color: #e08374">guest@portfolio</span><span style="color: #7f5c52">:</span><span style="color: #e08374">~</span><span style="color: #7f5c52">$</span>
-        <span>./aboutme</span><br>
-
-        <div class="mainCommand">
-          <img src="/images/icon.svg" alt="ASCII art">
-
-          <div>
-            <p>
-              <span><b>WILLIAM HENDERSON</b></span>
-            </p>
-
-            <p>
-              <span>Location</span>: Cambridge, United Kingdom
-            </p>
-
-            <p>
-              <span>Skills</span>: Rust, C, C++, TypeScript, <span id="additionalSkillsButton" class="expandButton" onclick="toggleAdditionalSkills()">+</span>
-              <span id="additionalSkills" class="hiddenInfo">
-                React, JavaScript, HTML/CSS/Sass, Python, Git/GitHub, SQL, Docker
-              </span>
-            </p>
-
-            <p>
-              <span>Education</span>: Computer Science at the University of Cambridge, year of 2025 (First class every year)
-            </p>
-
-            <p>
-              <span>GitHub</span>: <a href="https://github.com/w-henderson">w-henderson</a><br>
-              <span>LinkedIn</span>: <a href="https://www.linkedin.com/in/w-henderson/">w-henderson</a><br>
-              <span>Email</span>: <a href="mailto:hello@whenderson.dev">hello@whenderson.dev</a>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-bottom: 1em">
-        <span style="color: #e08374">guest@portfolio</span><span style="color: #7f5c52">:</span><span style="color: #e08374">~</span><span style="color: #7f5c52">$</span><div class="cursor"></div>
-      </div>
-    </div>
-  </div>
-
-  <section class="blogPosts">
-    <h2>Blog</h2>
-
-    <div>
-      Here are my most recent blog posts. You can find more of my thoughts and ideas on the <a href="/blog/">blog page</a>.
-    </div>
-
+  <section>
     <div class="PostCards">
-    {{ for($post, "blog/", limit=3, sortby=$post.date, order="desc") }}
+      {{ for($post, "blog/", limit=3, sortby=$post.date, order="desc") }}
       <a href="{{ $post.slug }}">
         <div class="postcard">
           <div>
@@ -128,62 +42,39 @@
       {{ end(for) }}
     </div>
   </section>
-  
-  <section class="projects">
-    <h2>Projects</h2>
 
-    <div>
-      I thrive on projects where every millisecond counts, and I find immense satisfaction in delivering performant and reliable solutions across diverse domains, from systems development to web applications, back-end infrastructure to mobile apps.
-    </div>
+  <section id="posts">
+    <a name="posts"></a>
+    <h2>All Posts</h2>
 
-    {{ for($project, "projects.json") }}
-    <div class="project">
-      <script>
-        if (window.innerWidth > 900) document.write(`<div class="image" style="background-image: url('/images/project/vertical/{{ $project.image }}')"></div>`);
-        else document.write(`<div class="image" style="background-image: url('/images/project/horizontal/{{ $project.image }}')"></div>`);
-      </script>
+    <div class="Posts">
+      {{ for($post, "blog/", sortby=$post.date, order="desc") }}
+      <a href="{{ $post.slug }}">
+        <div class="postcard">
+          <div>
+            <h3>{{ $post.title }}</h3>
 
-      <div class="content">
-        <div>
-          <h3>{{ $project.name }}</h3>
-          {{ $project.description }}
+            <span>{{ dateformat($post.date, "%e %B %Y") }}</span>
+            <span class="bull">&bull;</span>
+            <span>{{ timetoread($post.markdown) }} minute read</span>
+          </div>
+
+          <p>{{ excerpt($post.content, 100) }}</p>
         </div>
+      </a>
+      {{ end(for) }}
 
-        <div class="tags">
-          {{ for($tag, $project.tags) }}<div>{{ $tag }}</div>{{ end(for) }}
-        </div>
-
-        <div class="links">
-          {{ ifdefined($project.links.production) }}
-            <a class="primary" href="{{ $project.links.production }}">
-              Live Demo
-              <span class="material-icons">exit_to_app</span>
-            </a>
-          {{ end(ifdefined) }}
-
-          {{ ifdefined($project.links.source) }}
-            <a class="secondary" href="{{ $project.links.source }}">
-              <span class="material-icons">code</span>
-              View Source
-            </a>
-          {{ end(ifdefined) }}
-
-          {{ ifdefined($project.links.blog) }}
-            <a class="secondary" href="{{ $project.links.blog }}">
-              <span class="material-icons">library_books</span>
-              Blog Post
-            </a>
-          {{ end(ifdefined) }}
-        </div>
+      <div class="end">
+        That's all the posts so far!
       </div>
     </div>
-    {{ end(for) }}
   </section>
 
   <section class="contact">
+    <a name="contact"></a>
     <h2>Contact</h2>
 
-    <div>If you want any more information about me, or just a chat, please head over to one of the following platforms.</div>
+    <div>You can get in touch with me on any of the following platforms:</div>
 
     <div>
       <div class="contact">

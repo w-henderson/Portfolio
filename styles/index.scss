@@ -1,11 +1,9 @@
 @import "colours";
 
 @import "blogpost";
-@import "console";
 @import "contact";
 @import "postcards";
 @import "posts";
-@import "project";
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap');
@@ -76,6 +74,7 @@ main {
 
     header {
         margin-top: 96px;
+        margin-bottom: 96px;
 
         div:first-of-type {
             display: block;
@@ -104,7 +103,7 @@ main {
 
         div:last-of-type {
             margin: 0 auto;
-            max-width: 750px;
+            max-width: 600px;
             text-align: center;
             font-family: "Fira Mono";
             font-size: 1.2em;
@@ -167,6 +166,8 @@ main {
         }
 
         >div:first-of-type {
+            display: block;
+            text-align: center;
             margin: 0 auto 64px auto;
         }
     }

@@ -190,4 +190,9 @@ main.blogPost {
   main.blogPost>div header h1 {
     font-size: 3rem;
   }
+
+  main.blogPost>div div.post {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }
