@@ -447,4 +447,4 @@ At least I brought a little piece of China home to keep me company in the meanti
 
 ---
 
-Thank you so much for getting to the end of this ridiculously long blog post! I feel like I've written "this is not a travel blog" in so many of my previous posts, and that still stands - to some extent - but I hope you enjoyed something a bit different to my usual writing. Please [let me know](william@whenderson.dev) what you thought, and I'll see you next time. 再见!
+Thank you so much for getting to the end of this ridiculously long blog post! I feel like I've written "this is not a travel blog" in so many of my previous posts, and that still stands - to some extent - but I hope you enjoyed something a bit different to my usual writing. Please [let me know](mailto:william@whenderson.dev) what you thought, and I'll see you next time. 再见!
